@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCourses } from './redux/coursesSlice';
 import './App.css';
 
 function App() {
+  const courses = useSelector(({ course }) => course.courses);
+  console.log(courses);
+  const dispatch = useDispatch();
   useEffect(() => {
-    fetch('http://localhost:3000/api/greetings')
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+    dispatch(fetchCourses());
   }, []);
   return (
     <div className="App">
