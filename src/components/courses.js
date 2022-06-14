@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Row } from 'react-bootstrap';
+import { Row, Container } from 'react-bootstrap';
 import CourseItem from './courseItem';
 
 const Courses = ({ courses }) => (
-  <>
+  <Container>
     <div className="text-center">
       <h1 className="main-title">LATEST COURSES</h1>
       <p>Please select your Course</p>
@@ -21,7 +21,7 @@ const Courses = ({ courses }) => (
         />
       ))}
     </Row>
-  </>
+  </Container>
 );
 
 Courses.propTypes = {

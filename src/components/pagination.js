@@ -24,29 +24,33 @@ const Pagination = () => {
     setcurrentPage(currentPage - 1);
   };
   return (
-    <>
+    <div className="pagination">
       <Courses courses={currentItems} />
-      <ul className="pageNumbers">
-        <li>
-          <button
-            type="button"
-            onClick={handlePrevbtn}
-            disabled={currentPage === pages[0]}
-          >
-            Prev
-          </button>
-        </li>
-        <li>
-          <button
-            type="button"
-            onClick={handleNextbtn}
-            disabled={currentPage === pages[pages.length - 1]}
-          >
-            Next
-          </button>
-        </li>
-      </ul>
-    </>
+
+      <button
+        className="home-prev-btn pagination-btn"
+        type="button"
+        onClick={handlePrevbtn}
+        disabled={currentPage === pages[0]}
+      >
+        <img
+          src="https://www.svgrepo.com/show/310612/caret-right.svg"
+          alt="left"
+        />
+      </button>
+
+      <button
+        className="home-next-btn pagination-btn "
+        type="button"
+        onClick={handleNextbtn}
+        disabled={currentPage === pages[pages.length - 1]}
+      >
+        <img
+          src="https://www.svgrepo.com/show/310609/caret-left.svg"
+          alt="left"
+        />
+      </button>
+    </div>
   );
 };
 

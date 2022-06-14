@@ -4,7 +4,12 @@ import { Col } from 'react-bootstrap';
 
 const CourseItem = ({ name, description, image }) => (
   <Col className="text-center" xs={12} md={4}>
-    <img className="rounded-circle home-img" src={image} alt={name} />
+    <img
+      draggable={false}
+      className="rounded-circle home-img"
+      src={image}
+      alt={name}
+    />
     <div>
       <p className="fw-bold">{name.toUpperCase()}</p>
       <p>{description}</p>

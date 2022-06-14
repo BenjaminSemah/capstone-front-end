@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { fetchCourses } from '../../redux/coursesSlice';
 import Pagination from '../../components/pagination';
@@ -11,9 +10,9 @@ const Home = () => {
     dispatch(fetchCourses());
   }, []);
   return (
-    <Container>
+    <>
       <Pagination />
-    </Container>
+    </>
   );
 };
 
