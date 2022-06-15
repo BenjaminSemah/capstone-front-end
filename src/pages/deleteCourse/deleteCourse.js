@@ -2,11 +2,20 @@ import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteCourse } from '../../redux/coursesSlice';
+import Loader from '../../components/loader';
 import './deleteCourse.css';
 
 const DeleteCourse = () => {
   const dispatch = useDispatch();
-  const courses = useSelector(({ course }) => course.courses);
+  const data = useSelector(({ course }) => course);
+  const { courses, loading } = data;
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center">
+        <Loader />
+      </div>
+    );
+  }
   return (
     <div className="delete-courses pt-4">
       <Container>

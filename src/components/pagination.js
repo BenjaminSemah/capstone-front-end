@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import Courses from './courses';
+import Loader from './loader';
 
 const Pagination = () => {
   const [currentPage, setcurrentPage] = useState(1);
   const [itemsPerPage] = useState(3);
-  const data = useSelector(({ course }) => course.courses);
+  const data = useSelector(({ course }) => course);
+  const { courses, loading } = data;
 
   const pages = [];
-  for (let i = 1; i <= Math.ceil(data.length / itemsPerPage); i += 1) {
+  for (let i = 1; i <= Math.ceil(courses.length / itemsPerPage); i += 1) {
     pages.push(i);
   }
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = courses.slice(indexOfFirstItem, indexOfLastItem);
 
   const handleNextbtn = () => {
     setcurrentPage(currentPage + 1);
@@ -23,6 +25,14 @@ const Pagination = () => {
   const handlePrevbtn = () => {
     setcurrentPage(currentPage - 1);
   };
+
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center">
+        <Loader />
+      </div>
+    );
+  }
   return (
     <div className="pagination mt-4">
       <Courses courses={currentItems} />
