@@ -24,7 +24,7 @@ const Pagination = () => {
     setcurrentPage(currentPage - 1);
   };
   return (
-    <div className="pagination">
+    <div className="pagination mt-4">
       <Courses courses={currentItems} />
 
       <button

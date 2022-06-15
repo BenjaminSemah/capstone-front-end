@@ -8,9 +8,16 @@ const initialState = {
   error: '',
 };
 
-export const fetchCourses = createAsyncThunk('course/fetchCourses', () => axios
+export const fetchCourses = createAsyncThunk('courses/fetchCourses', () => axios
   .get('http://localhost:3000/api/courses')
   .then((response) => response.data));
+
+export const deleteCourse = createAsyncThunk('courses/deleteCourse', (id) => axios.delete(`http://localhost:3000/api/courses/${id}`).then((response) => {
+  if (response.status === 200) {
+    return id;
+  }
+  return false;
+}));
 
 const courseSlice = createSlice({
   name: 'course',
@@ -27,6 +34,11 @@ const courseSlice = createSlice({
       state.loading = false;
       state.courses = [];
       state.error = action.error.message;
+    });
+    builder.addCase(deleteCourse.fulfilled, (state, action) => {
+      if (action.payload) {
+        state.courses = state.courses.filter((c) => c.id !== action.payload);
+      }
     });
   },
 });
