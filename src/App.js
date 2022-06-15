@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Home from './pages/home/home';
 
 function App() {
-  useEffect(() => {
-    fetch('http://localhost:3000/api/greetings')
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
   return (
-    <div className="App">
-      <h1>Capstone Frontend</h1>
-    </div>
+    <Router>
+      <div className="App mt-4">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
