@@ -40,7 +40,6 @@ export const deleteCourse = createAsyncThunk('courses/deleteCourse', (id) => axi
   return false;
 }));
 
-
 const courseSlice = createSlice({
   name: 'course',
   initialState,
