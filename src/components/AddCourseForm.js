@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addCourse } from '../redux/coursesSlice';
 
 export default function AddCourseForm() {
+  const dispatch = useDispatch();
+
   const [courseData, setCourseData] = useState(
     {
       name: '',
@@ -24,58 +28,68 @@ export default function AddCourseForm() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(courseData);
+    dispatch(addCourse(courseData));
   };
 
   return (
     <>
-      <p>This is the form</p>
       <form
         className="addCourse--form"
         onSubmit={handleFormSubmit}
       >
         <input
+          className="form--input"
           type="text"
-          placeholder="name of course"
+          placeholder="Name of course"
           name="name"
           onChange={handleFormChange}
           value={courseData.name}
         />
         <textarea
-          placeholder="description"
+          className="form--input form--desc"
+          placeholder="Description"
           name="description"
           onChange={handleFormChange}
           value={courseData.description}
         />
         <input
+          className="form--input"
           type="text"
-          placeholder="location"
+          placeholder="Location"
           name="location"
           onChange={handleFormChange}
           value={courseData.location}
         />
         <input
+          className="form--input"
           type="text"
-          placeholder="size"
+          placeholder="Size"
           name="size"
           onChange={handleFormChange}
           value={courseData.size}
         />
         <input
+          className="form--input"
           type="text"
-          placeholder="price"
+          placeholder="Price"
           name="price"
           onChange={handleFormChange}
           value={courseData.price}
         />
         <input
+          className="form--input"
           type="text"
-          placeholder="image url"
+          placeholder="Image url"
           name="image"
           onChange={handleFormChange}
           value={courseData.image}
         />
-        <button type="submit">SUBMIT</button>
+        <button
+          className="submit--btn"
+          type="submit"
+        >
+          Add New Course
+        </button>
       </form>
     </>
   );
