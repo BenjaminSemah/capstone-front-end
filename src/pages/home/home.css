@@ -15,25 +15,24 @@
 }
 
 .home-prev-btn {
-  position: absolute;
-  top: 40vh;
   right: 0;
   border-top-left-radius: 150px;
   border-bottom-left-radius: 150px;
 }
 
 .home-next-btn {
-  position: absolute;
-  top: 40vh;
   left: 0;
   border-top-right-radius: 150px;
   border-bottom-right-radius: 150px;
 }
 
 .pagination-btn {
+  position: fixed;
+  top: 40vh;
   background-color: #97bf0f;
   border: none;
   padding: 10px 20px;
+  height: 45px;
 }
 
 .pagination-btn img {
