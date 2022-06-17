@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addCourse } from '../redux/coursesSlice';
 
 export default function AddCourseForm() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [courseData, setCourseData] = useState(
     {
@@ -29,6 +31,7 @@ export default function AddCourseForm() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     dispatch(addCourse(courseData));
+    navigate('/');
   };
 
   return (
