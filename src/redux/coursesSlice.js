@@ -3,6 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const apiURL = 'http://localhost:3001/api/courses';
+const userToken = JSON.parse(localStorage.getItem('userAuth'));
 
 const initialState = {
   loading: false,
@@ -10,35 +11,43 @@ const initialState = {
   error: '',
 };
 
-export const fetchCourses = createAsyncThunk('courses/fetchCourses', () => axios
-  .get('http://localhost:3001/api/courses')
-  .then((response) => response.data));
+export const fetchCourses = createAsyncThunk('courses/fetchCourses', () => fetch(`${apiURL}`, {
+  headers: { Authorization: userToken },
+}).then((resp) => resp.json()));
 
-export const addCourse = createAsyncThunk('/courses/addCourse', async (course) => {
-  const response = await fetch(apiURL, {
-    method: 'POST',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer',
-    body: JSON.stringify(course),
-  });
+export const addCourse = createAsyncThunk(
+  '/courses/addCourse',
+  async (course) => {
+    const response = await fetch(apiURL, {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: userToken,
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(course),
+    });
 
-  const result = await response.json();
+    const result = await response.json();
 
-  return result;
-});
+    return result;
+  },
+);
 
-export const deleteCourse = createAsyncThunk('courses/deleteCourse', (id) => axios.delete(`http://localhost:3001/api/courses/${id}`).then((response) => {
-  if (response.status === 200) {
-    return id;
-  }
-  return false;
-}));
+export const deleteCourse = createAsyncThunk('courses/deleteCourse', (id) => axios
+  .delete(`${apiURL}/${id}`, {
+    headers: { Authorization: userToken },
+  })
+  .then((response) => {
+    if (response.status === 200) {
+      return id;
+    }
+    return false;
+  }));
 
 const courseSlice = createSlice({
   name: 'course',
@@ -59,6 +68,11 @@ const courseSlice = createSlice({
     builder.addCase(deleteCourse.fulfilled, (state, action) => {
       if (action.payload) {
         state.courses = state.courses.filter((c) => c.id !== action.payload);
+      }
+    });
+    builder.addCase(addCourse.fulfilled, (state, action) => {
+      if (action.payload.id) {
+        state.courses = [action.payload, ...state.courses];
       }
     });
   },

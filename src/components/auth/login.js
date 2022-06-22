@@ -1,20 +1,15 @@
-/* eslint-disable */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-// import { FaRegUser, FaUser } from 'react-icons/fa';
-// import { HiOutlineMailOpen } from 'react-icons/hi';
-// import { RiLockPasswordLine } from 'react-icons/ri';
-import { hitAPIWithSigninDetails } from '../../reducers/auth';
-
-// import styles from './Login.module.css';
+import { APIuserSignIn } from '../../redux/auth';
 
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const state = useSelector((state) => state.UserReducer);
   const { loggedIn } = state;
-  const [signedInSuccess, setSignedInSuccess] = useState(loggedIn);
+  const [loginSuccess, setLoginSuccess] = useState(loggedIn);
   const [email, setEmail] = useState('');
   const [password, setPassowrd] = useState('');
   const loginUser = (e) => {
@@ -24,29 +19,27 @@ const Login = () => {
       email,
       password,
     };
-    dispatch(hitAPIWithSigninDetails(newUser));
+    dispatch(APIuserSignIn(newUser));
     setEmail('');
     setPassowrd('');
   };
 
   useEffect(() => {
-    console.log(state);
     if (loggedIn === 'in') {
       navigate('/', { replace: true });
+      window.location.reload();
     }
     if (loggedIn === 'err') {
-      setSignedInSuccess(loggedIn);
+      setLoginSuccess(loggedIn);
     }
   }, [state]);
   return (
     <section>
-      {/* <div className={styles.loginIcon}><FaUser /></div> */}
       <h2>Welcome back</h2>
 
       <form onSubmit={loginUser}>
         <h4>Member Login</h4>
         <div>
-          {/* <span className={styles.icon}><HiOutlineMailOpen /></span> */}
           <input
             type="email"
             className="form-control"
@@ -58,7 +51,6 @@ const Login = () => {
         </div>
 
         <div>
-          {/* <span className={styles.icon}><RiLockPasswordLine /></span> */}
           <input
             type="password"
             className="form-control"
@@ -72,7 +64,8 @@ const Login = () => {
         <button type="submit">Submit</button>
       </form>
       <p>
-        New here?{' '}
+        New here?
+        {' '}
         <Link to="/register" style={{ textDecoration: 'none' }}>
           Register
         </Link>

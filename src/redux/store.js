@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
 import courseReducer from './coursesSlice';
-import { userReducertrying } from '../reducers/auth';
+import { userReducer } from './auth';
 
 const store = configureStore({
   reducer: {
-    UserReducer: userReducertrying,
+    UserReducer: userReducer,
     course: courseReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),

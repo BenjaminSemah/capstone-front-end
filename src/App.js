@@ -1,5 +1,4 @@
-/* eslint-disable */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,42 +13,24 @@ import Login from './components/auth/login';
 import Home from './pages/home/home';
 import DeleteCourse from './pages/deleteCourse/deleteCourse';
 import AddCourse from './pages/addCourse/AddCourse';
-import { hitAPIWithLogoutDetails } from './reducers/auth';
-import Test from './pages/test';
+import { APIuserLogOut } from './redux/auth';
 
 function App() {
-  const [authuser, setAuthUser] = useState([]);
-  // const authuser = window.localStorage.getItem('userAuth');
-  console.log(authuser);
+  const authuser = localStorage.getItem('userAuth');
   const dispatch = useDispatch();
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem('userAuth'));
-    console.log(user);
-    if (user) {
-      setAuthUser(user);
-    }
-    dispatch(fetchCourses());
+    const user = localStorage.getItem('userAuth');
+    dispatch(fetchCourses(user));
   }, []);
   return (
     <>
       <Router>
-        <NavLink
-          to="/test"
-          onClick={() => dispatch(hitAPIWithLogoutDetails(authuser))}
-        >
+        <NavLink to="/login" onClick={() => dispatch(APIuserLogOut(authuser))}>
           Sign Out
         </NavLink>
         <div className="App">
-          {/* <Navbar />
-        <Routes>
-          <Route exact path="/" element={<NormalRoute />} />
-          <Route exact path="/protected_route" element={<WithAuth />} />
-          <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/login" element={<Login />} />
-        </Routes> */}
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/test" element={<Test />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/add-course" element={<AddCourse />} />

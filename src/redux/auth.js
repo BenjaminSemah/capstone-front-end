@@ -1,5 +1,5 @@
 import axios from 'axios';
-/* eslint-disable */
+
 const baseUrl = 'http://localhost:3001';
 
 const initialState = {
@@ -11,11 +11,11 @@ const initialState = {
 };
 
 // Constants
-const SIGN_UP = 'SIGN_UP';
-const LOGIN = 'LOGIN';
-const LOGOUT = 'LOGOUT';
+const SIGN_UP = 'USER/SIGN_UP';
+const LOGIN = 'USER/LOGIN';
+const LOGOUT = 'USER/LOGOUT';
 
-// Action Creators
+// Actions
 export const signUp = (payload) => ({
   type: SIGN_UP,
   payload,
@@ -32,7 +32,7 @@ export const logout = (payload) => ({
 });
 
 // Reducesrs
-export const userReducertrying = (state = initialState, action) => {
+export const userReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case SIGN_UP:
@@ -46,10 +46,12 @@ export const userReducertrying = (state = initialState, action) => {
   }
 };
 
-const hitAPIWithSignupDetails = (details) => async (dispatch) => {
-  const { name, email, password, passwordConfirmation } = details;
+const APIuserSignUp = (userInfo) => async (dispatch) => {
+  const {
+    name, email, password, passwordConfirmation,
+  } = userInfo;
   try {
-    const signInRespons = axios({
+    const response = axios({
       method: 'post',
       url: `${baseUrl}/signup`,
       data: {
@@ -60,12 +62,12 @@ const hitAPIWithSignupDetails = (details) => async (dispatch) => {
           password_confirmation: passwordConfirmation,
         },
       },
-    }).then((response) => console.log(response));
+    });
 
-    const ress = await signInRespons;
-    console.log('###########################');
-    console.log(ress);
-    console.log('###########################');
+    const result = await response;
+    const { headers } = result;
+    const { authorization } = headers;
+    localStorage.setItem('userAuth', JSON.stringify(authorization));
     dispatch(
       signUp({
         name: '',
@@ -88,10 +90,10 @@ const hitAPIWithSignupDetails = (details) => async (dispatch) => {
   }
 };
 
-export const hitAPIWithSigninDetails = (details) => async (dispatch) => {
-  const { email, password } = details;
+export const APIuserSignIn = (cardentials) => async (dispatch) => {
+  const { email, password } = cardentials;
   try {
-    const signUpRespons = axios({
+    const response = axios({
       method: 'post',
       url: `${baseUrl}/login`,
       data: {
@@ -102,30 +104,21 @@ export const hitAPIWithSigninDetails = (details) => async (dispatch) => {
       },
     });
 
-    const res = await signUpRespons;
-    // console.log(res);
-    const { data } = res;
-
+    const result = await response;
+    const { data } = result;
     const userData = data.data.created_date;
-
-    const { headers } = res;
-
+    const { headers } = result;
     const { authorization } = headers;
-    console.log('@@@@@@@@@@@@@@@@@@@@@@@');
-    console.log(authorization);
-    console.log('@@@@@@@@@@@@@@@@@@@@@@@');
-    const mainUser = {
+    const currentUser = {
       name: userData.name,
       email: userData.email,
       loggedIn: 'in',
       userId: userData.id,
       signedUp: true,
     };
-
     localStorage.setItem('userAuth', JSON.stringify(authorization));
-    localStorage.setItem('bookDoctorUser', JSON.stringify(mainUser));
 
-    dispatch(login(mainUser));
+    dispatch(login(currentUser));
   } catch (error) {
     dispatch(
       login({
@@ -139,14 +132,13 @@ export const hitAPIWithSigninDetails = (details) => async (dispatch) => {
   }
 };
 
-export const hitAPIWithLogoutDetails = (auth) => async (dispatch) => {
-  const { userAuth } = auth;
+export const APIuserLogOut = (auth) => async (dispatch) => {
   try {
     await fetch(`${baseUrl}/logout`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `${userAuth}`,
+        Authorization: `${auth}`,
       },
     });
 
@@ -159,7 +151,6 @@ export const hitAPIWithLogoutDetails = (auth) => async (dispatch) => {
     );
 
     localStorage.removeItem('userAuth');
-    localStorage.removeItem('bookDoctorUser');
   } catch (error) {
     dispatch(
       signUp({
@@ -173,4 +164,4 @@ export const hitAPIWithLogoutDetails = (auth) => async (dispatch) => {
   }
 };
 
-export default hitAPIWithSignupDetails;
+export default APIuserSignUp;

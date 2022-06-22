@@ -1,19 +1,15 @@
-/* eslint-disable */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-// import { FaRegUser, FaUser } from 'react-icons/fa';
-// import { HiOutlineMailOpen } from 'react-icons/hi';
-// import { FiPhoneCall } from 'react-icons/fi';
-// import { RiLockPasswordLine } from 'react-icons/ri';
-import hitAPIWithSignupDetails from '../../reducers/auth';
-// import styles from './Login.module.scss';
+import APIuserSignUp from '../../redux/auth';
 
 const Register = () => {
   const navigate = useNavigate();
 
-  function goToHomePage() {
+  function navigateToHome() {
     navigate('/', { replace: true });
+    window.location.reload();
   }
   const dispatch = useDispatch();
   const state = useSelector((state) => state.UserReducer);
@@ -32,9 +28,7 @@ const Register = () => {
       passwordConfirmation,
       password,
     };
-    console.log('start hit api');
-    dispatch(hitAPIWithSignupDetails(newUser));
-    console.log('end hit api');
+    dispatch(APIuserSignUp(newUser));
     setEmail('');
     setName('');
     setPassowrd('');
@@ -44,18 +38,16 @@ const Register = () => {
   useEffect(() => {
     setSignUpSucess(() => signedUp);
     if (signedUp === 'up') {
-      setTimeout(() => goToHomePage(), 3000);
+      setTimeout(() => navigateToHome(), 2800);
     }
   }, [state]);
 
   return (
     <section>
-      {/* <div className={styles.loginIcon}><FaUser /></div> */}
       <h2>Welcome</h2>
       <form onSubmit={registerUser}>
         <h4>Register</h4>
         <div>
-          {/* <span className={styles.icon}><HiOutlineMailOpen /></span> */}
           <input
             type="email"
             className="form-control"
@@ -66,7 +58,6 @@ const Register = () => {
           />
         </div>
         <div>
-          {/* <span className={styles.icon}><FaRegUser /></span> */}
           <input
             type="text"
             className="form-control"
@@ -78,7 +69,6 @@ const Register = () => {
         </div>
 
         <div>
-          {/* <span className={styles.icon}><RiLockPasswordLine /></span> */}
           <input
             type="password"
             className="form-control"
@@ -89,11 +79,10 @@ const Register = () => {
           />
         </div>
         <div>
-          {/* <span className={styles.icon}><FiPhoneCall /></span> */}
           <input
             type="password"
             className="form-control"
-            id="name"
+            id="confirm_password"
             placeholder="Confirm password"
             onChange={(e) => setPasswordConfirmation(e.target.value)}
             value={passwordConfirmation}
@@ -102,7 +91,8 @@ const Register = () => {
         <button type="submit">Register</button>
       </form>
       <p>
-        Already have an account?{' '}
+        Already have an account?
+        {' '}
         <Link to="/login" style={{ textDecoration: 'none' }}>
           Login
         </Link>
