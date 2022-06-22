@@ -27,7 +27,7 @@ const AddReservation = () => {
   return (
     <>
       <nav className="navbar">
-        <h1>Reserve Your Courses</h1>
+        <h1>Reserve Courses</h1>
         <div className="links">
           {/* <a href="/create">Reservations</a> */}
           <a href="/">Courses</a>
@@ -36,10 +36,12 @@ const AddReservation = () => {
       <form className="delete-courses">
         <label htmlFor="city">
           City:
+          <br />
           <input id="city" name="city" onChange={handleCity} />
         </label>
         <label htmlFor="date">
           Date:
+          <br />
           <input id="date" name="date" onChange={handleDate} />
         </label>
         <button type="submit" onClick={createReserve}>Reserve</button>
