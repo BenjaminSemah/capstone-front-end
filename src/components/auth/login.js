@@ -1,78 +1,84 @@
 /* eslint-disable */
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+// import { FaRegUser, FaUser } from 'react-icons/fa';
+// import { HiOutlineMailOpen } from 'react-icons/hi';
+// import { RiLockPasswordLine } from 'react-icons/ri';
+import { hitAPIWithSigninDetails } from '../../reducers/auth';
 
-import React from 'react';
-import { connect } from 'react-redux';
-import { loginUser } from '../../actions/auth';
+// import styles from './Login.module.css';
 
-
-class Login extends React.Component {
-  state = {
-    email: '',
-    password: '',
-    error: false,
+const Login = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.UserReducer);
+  const { loggedIn } = state;
+  const [signedInSuccess, setSignedInSuccess] = useState(loggedIn);
+  const [email, setEmail] = useState('');
+  const [password, setPassowrd] = useState('');
+  const loginUser = (e) => {
+    e.preventDefault();
+    if (email === '' || password === '') return;
+    const newUser = {
+      email,
+      password,
+    };
+    dispatch(hitAPIWithSigninDetails(newUser));
+    setEmail('');
+    setPassowrd('');
   };
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  };
+  useEffect(() => {
+    console.log(state);
+    if (loggedIn === 'in') {
+      navigate('/', { replace: true });
+    }
+    if (loggedIn === 'err') {
+      setSignedInSuccess(loggedIn);
+    }
+  }, [state]);
+  return (
+    <section>
+      {/* <div className={styles.loginIcon}><FaUser /></div> */}
+      <h2>Welcome back</h2>
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const { email, password } = this.state;
-    this.props
-      .dispatchLoginUser({ email, password })
-      .then(() => this.props.history.push('/'))
-      .catch(() => this.setState({ error: true }));
-  };
-
-  render() {
-    return (
-      <form
-        onSubmit={this.handleSubmit}
-        className="w-11/12 max-w-2xl mx-auto mt-8"
-      >
-        <h1 className="font-bold text-3xl">Log In</h1>
-        <p className="h-8 text-red-400">{this.state.error && 'Invalid email or password'}</p>
-        <fieldset>
-          <label className="block uppercase mb-2" htmlFor="email">
-            Email:
-          </label>
+      <form onSubmit={loginUser}>
+        <h4>Member Login</h4>
+        <div>
+          {/* <span className={styles.icon}><HiOutlineMailOpen /></span> */}
           <input
-            type="text"
-            name="email"
-            id="email"
-            className="w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4"
-            onChange={this.handleChange}
-            value={this.state.email}
+            type="email"
+            className="form-control"
+            id="Email1"
+            placeholder="Useremail"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
-        </fieldset>
-        <fieldset>
-          <label className="block uppercase mb-2" htmlFor="password">
-            Password:
-          </label>
+        </div>
+
+        <div>
+          {/* <span className={styles.icon}><RiLockPasswordLine /></span> */}
           <input
             type="password"
-            name="password"
+            className="form-control"
             id="password"
-            className="w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4"
-            onChange={this.handleChange}
-            value={this.state.password}
+            placeholder="Password"
+            onChange={(e) => setPassowrd(e.target.value)}
+            value={password}
           />
-        </fieldset>
-        <input
-          className="w-full text-center uppercase p-4 bg-blue-300 cursor-pointer mt-4"
-          type="submit"
-          value="Log In"
-        />
+        </div>
+
+        <button type="submit">Submit</button>
       </form>
-    );
-  }
-}
+      <p>
+        New here?{' '}
+        <Link to="/register" style={{ textDecoration: 'none' }}>
+          Register
+        </Link>
+      </p>
+    </section>
+  );
+};
 
-const mapDispatchToProps = (dispatch) => ({
-  dispatchLoginUser: (credentials) => dispatch(loginUser(credentials)),
-});
-
-export default connect(null, mapDispatchToProps)(Login);
+export default Login;

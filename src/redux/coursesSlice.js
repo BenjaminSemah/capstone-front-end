@@ -2,7 +2,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const apiURL = 'http://localhost:3000/api/courses';
+const apiURL = 'http://localhost:3001/api/courses';
 
 const initialState = {
   loading: false,

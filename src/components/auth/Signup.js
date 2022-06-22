@@ -1,77 +1,114 @@
 /* eslint-disable */
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+// import { FaRegUser, FaUser } from 'react-icons/fa';
+// import { HiOutlineMailOpen } from 'react-icons/hi';
+// import { FiPhoneCall } from 'react-icons/fi';
+// import { RiLockPasswordLine } from 'react-icons/ri';
+import hitAPIWithSignupDetails from '../../reducers/auth';
+// import styles from './Login.module.scss';
 
-import React from 'react';
-import { connect } from 'react-redux';
-import { signupUser } from '../../actions/auth';
+const Register = () => {
+  const navigate = useNavigate();
 
-class Signup extends React.Component {
-  state = {
-    email: '',
-    password: '',
-    errors: { status: { message: '' } },
+  function goToHomePage() {
+    navigate('/', { replace: true });
+  }
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.UserReducer);
+  const { signedUp } = state;
+  const [signUpSuccess, setSignUpSucess] = useState(signedUp);
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [password, setPassowrd] = useState('');
+  const registerUser = (e) => {
+    e.preventDefault();
+    if (email === '' || name === '' || password === '') return;
+    const newUser = {
+      email,
+      name,
+      passwordConfirmation,
+      password,
+    };
+    console.log('start hit api');
+    dispatch(hitAPIWithSignupDetails(newUser));
+    console.log('end hit api');
+    setEmail('');
+    setName('');
+    setPassowrd('');
+    setPasswordConfirmation('');
   };
 
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  };
+  useEffect(() => {
+    setSignUpSucess(() => signedUp);
+    if (signedUp === 'up') {
+      setTimeout(() => goToHomePage(), 3000);
+    }
+  }, [state]);
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const { email, password } = this.state;
-    this.props
-      .dispatchSignupUser({ email, password })
-      .then(() => this.props.history.push('/'))
-      .catch((errors) => this.setState({ errors }));
-  };
-
-  render() {
-    return (
-      <form
-        onSubmit={this.handleSubmit}
-        className="w-11/12 max-w-2xl mx-auto mt-8"
-      >
-        <h1 className="font-bold text-3xl mb-2">Sign Up</h1>
-        <p className="h-8 text-red-400">{this.state.errors.status.message}</p>
-        <fieldset>
-          <label className="block uppercase mb-2" htmlFor="email">
-            Email:
-          </label>
+  return (
+    <section>
+      {/* <div className={styles.loginIcon}><FaUser /></div> */}
+      <h2>Welcome</h2>
+      <form onSubmit={registerUser}>
+        <h4>Register</h4>
+        <div>
+          {/* <span className={styles.icon}><HiOutlineMailOpen /></span> */}
+          <input
+            type="email"
+            className="form-control"
+            id="Email1"
+            placeholder="Enter email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+        </div>
+        <div>
+          {/* <span className={styles.icon}><FaRegUser /></span> */}
           <input
             type="text"
-            name="email"
-            id="email"
-            className="w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4"
-            onChange={this.handleChange}
-            value={this.state.email}
+            className="form-control"
+            id="name"
+            placeholder="Enter full name"
+            onChange={(e) => setName(e.target.value)}
+            value={name}
           />
-        </fieldset>
-        <fieldset>
-          <label className="block uppercase mb-2" htmlFor="password">
-            Password:
-          </label>
+        </div>
+
+        <div>
+          {/* <span className={styles.icon}><RiLockPasswordLine /></span> */}
           <input
             type="password"
-            name="password"
+            className="form-control"
             id="password"
-            className="w-full border-2 focus:outline-none focus:ring-2 p-4 mb-4"
-            onChange={this.handleChange}
-            value={this.state.password}
+            placeholder="password"
+            onChange={(e) => setPassowrd(e.target.value)}
+            value={password}
           />
-        </fieldset>
-        <input
-          className="w-full text-center uppercase p-4 bg-blue-300 cursor-pointer mt-4"
-          type="submit"
-          value="Sign Up"
-        />
+        </div>
+        <div>
+          {/* <span className={styles.icon}><FiPhoneCall /></span> */}
+          <input
+            type="password"
+            className="form-control"
+            id="name"
+            placeholder="Confirm password"
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
+            value={passwordConfirmation}
+          />
+        </div>
+        <button type="submit">Register</button>
       </form>
-    );
-  }
-}
+      <p>
+        Already have an account?{' '}
+        <Link to="/login" style={{ textDecoration: 'none' }}>
+          Login
+        </Link>
+      </p>
+    </section>
+  );
+};
 
-const mapDispatchToProps = (dispatch) => ({
-  dispatchSignupUser: (credentials) => dispatch(signupUser(credentials)),
-});
-
-export default connect(null, mapDispatchToProps)(Signup);
+export default Register;

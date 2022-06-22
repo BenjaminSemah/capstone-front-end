@@ -1,10 +1,11 @@
+/* eslint-disable */
 import React from 'react';
 import { connect } from 'react-redux';
 import { checkAuth } from '../../actions/auth';
 import LoadingSpinner from '../LoadingSpinner';
 import Login from './login';
 
-function withAuth(WrappedComponent) {
+function WithAuth() {
   class Wrapper extends React.Component {
     componentDidMount() {
       this.props.dispatchCheckAuth();
@@ -13,7 +14,8 @@ function withAuth(WrappedComponent) {
     render() {
       if (!this.props.authChecked) {
         return <LoadingSpinner />;
-      } if (!this.props.loggedIn) {
+      }
+      if (!this.props.loggedIn) {
         return (
           <>
             <Login />
@@ -21,7 +23,7 @@ function withAuth(WrappedComponent) {
           </>
         );
       }
-      return <WrappedComponent {...this.props} />;
+      // return <WrappedComponent {...this.props} />;
     }
   }
 
@@ -36,4 +38,4 @@ function withAuth(WrappedComponent) {
   return connect(mapStateToProps, mapDispatchToProps)(Wrapper);
 }
 
-export default withAuth;
+export default WithAuth;
