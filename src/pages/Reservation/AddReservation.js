@@ -26,6 +26,13 @@ const AddReservation = () => {
 
   return (
     <>
+      <nav className="navbar">
+        <h1>Reservatons</h1>
+        <div className="links">
+          {/* <a href="/create">Reservations</a> */}
+          <a href="/">Courses</a>
+        </div>
+      </nav>
       <form className="delete-courses">
         <label htmlFor="city">
           City:
