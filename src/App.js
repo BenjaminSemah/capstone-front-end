@@ -7,6 +7,7 @@ import './App.css';
 import { fetchCourses } from './redux/coursesSlice';
 import Home from './pages/home/home';
 import DeleteCourse from './pages/deleteCourse/deleteCourse';
+import DetailsPage from './pages/detailsPage/detailsPage';
 import AddCourse from './pages/addCourse/AddCourse';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/add-course" element={<AddCourse />} />
           <Route exact path="/delete-course" element={<DeleteCourse />} />
+          <Route path="/details/:id" element={<DetailsPage />} />
         </Routes>
       </div>
     </Router>
