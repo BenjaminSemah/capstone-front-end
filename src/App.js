@@ -10,7 +10,7 @@ import NormalRoute from './components/NormalRoute';
 import ProtectedRoute from './components/ProtectedRoute';
 import Signup from './components/auth/Signup';
 import Login from './components/auth/login';
-import withAuth from "./components/auth/withAuth";
+import withAuth from './components/auth/withAuth';
 // import Home from './pages/home/home';
 // import DeleteCourse from './pages/deleteCourse/deleteCourse';
 // import AddCourse from './pages/addCourse/AddCourse';
@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/" component={NormalRoute} />
           <Route
             exact
-            path='/protected_route'
+            path="/protected_route"
             component={withAuth(ProtectedRoute)}
           />
           <Route exact path="/signup" component={Signup} />
