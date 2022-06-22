@@ -10,6 +10,13 @@
     height: 90vh;
     font-size: 23px;
   }
+
+
+  .navbar, .navbar a {
+    color: #da592a;
+    padding: 20px 30px;
+    text-decoration: none;
+  }
   
   .delete-courses::after {
     content: '';
