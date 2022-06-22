@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router, Routes, Route,
 } from 'react-router-dom';
+import Navbar from "./components/navbar";
+import NormalRoute from "./components/NormalComponent"
 import { useDispatch } from 'react-redux';
 import './App.css';
 import { fetchCourses } from './redux/coursesSlice';
