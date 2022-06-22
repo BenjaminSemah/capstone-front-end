@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Book A Golf Course (Front-end)
 
-## Available Scripts
+This is the React front-end repository for an Golf course booking web-application. We use React for the front-end, and Ruby on Rails for the back-end.
 
-In the project directory, you can run:
+Visit the [Back-end repository.](https://github.com/omarsalem7/capstone-back-end)
 
-### `npm start`
+## Preview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![App-preview]
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Live version
 
-### `npm test`
+- [App (Front-end)]()
+- [Back-end]()
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built With
+- React
+- Redux
 
-### `npm run build`
+## Getting Started
+- Follow setup instructions below
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- Git and Github
+- Terminal
+- Browser
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Setup
 
-### `npm run eject`
+Follow [this link](https://github.com/omarsalem7/capstone-back-end) to visit the [back-end repository](https://github.com/omarsalem7/capstone-back-end.git) and start the server on localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Clone this repository `https://github.com/BenjaminSemah/capstone-front-end.git`
+- Cd or navigate into the directory and run `npm install` to install dependencies
+- Run `npm start`
+- Visit `localhost:3001` in your browser
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Suggestions:
+Back-end should run in **localhost:3000**
+Front-end should run in **localhost:3001**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Credits
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Authors
 
-## Learn More
+👤 **Omar Salem**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- GitHub: [Omar Salem](https://github.com/omarsalem7)
+- Twitter: [Omar Salem](https://twitter.com/Omar80491499)
+- LinkedIn: [Omar Salem](https://www.linkedin.com/in/omar-salem-a6945b177/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+👤 **Stephan**
 
-### Code Splitting
+- GitHub: [@stephan](https://github.com/sneeu-leeu)
+- Twitter: [@Stephan](https://twitter.com/Stephan07484055)
+- LinkedIn: [Stephan Annandale](https://www.linkedin.com/in/stephan-annandale-a4b4931a9/)
+  
+👤 **Josphat Nkonde**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- GitHub: [@zairdon20](https://github.com/zairdon20)
+- Twitter: [@josphat1 nkonde](https://twitter.com/josphat-nkonde)
+- LinkedIn: [@josphat nkonde](https://www.linkedin.com/in/josphat-nkonde)
 
-### Analyzing the Bundle Size
+👤 **Benjmain Semah**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- GitHub: [@BenjaminSemah](https://github.com/BenjaminSemah)
+- Twitter: [@BenjaminSemah](https://twitter.com/BenjaminSemah)
+- LinkedIn: [@BenjaminSemah](https://www.linkedin.com/in/benjaminsemah/)
 
-### Making a Progressive Web App
+👤 **Butler shimalwani**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- GitHub: [@Butlermuwo](https://github.com/butlermuwo)
+- Twitter: [@Butlermuwo](https://twitter.com/ButlerMuwo)
+- LinkedIn: [@Butlermuwo](https://www.linkedin.com/in/butlermuwo)
+## 🤝 Contributing
 
-### Advanced Configuration
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Feel free to check the [issues page](../../issues/).
 
-### Deployment
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Give a ⭐️ if you like this project!
 
-### `npm run build` fails to minify
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Microverse](https://www.microverse.org/)
+- Original Design idea by [Murat Korkmaz](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
