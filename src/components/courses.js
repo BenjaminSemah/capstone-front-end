@@ -15,6 +15,7 @@ const Courses = ({ courses }) => (
       }) => (
         <CourseItem
           key={id}
+          id={id}
           name={name}
           image={image}
           description={description}

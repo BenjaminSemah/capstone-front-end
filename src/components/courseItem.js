@@ -5,10 +5,7 @@ import { Col } from 'react-bootstrap';
 
 const CourseItem = ({
   name, description, image, id,
-})
-
-{
-   return(
+}) => (
   <Link to={`/details/${id}`}>
     <Col className="text-center" xs={12} md={4}>
       <img
@@ -24,12 +21,12 @@ const CourseItem = ({
     </Col>
   </Link>
 );
-}
+
 CourseItem.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default CourseItem;
