@@ -8,7 +8,11 @@ Visit the [Back-end repository.](https://github.com/omarsalem7/capstone-back-end
 
 ## Preview
 
-![App-preview]
+![homepage](https://user-images.githubusercontent.com/64237087/175143345-ee538384-06a1-4eff-8adc-d86da535d707.png)
+![detailPage](https://user-images.githubusercontent.com/64237087/175143462-a41ff61e-c9ed-45c6-a06a-3812f7409fae.png)
+![addCourse](https://user-images.githubusercontent.com/64237087/175143488-0a6d9acd-3e74-46b8-b504-f208e87ae033.png)
+![deleteCourse](https://user-images.githubusercontent.com/64237087/175143504-3654f187-c9b0-40d1-842b-9cccbd938037.png)
+
 
 ## Live version
 
