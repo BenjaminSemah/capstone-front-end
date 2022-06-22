@@ -11,7 +11,7 @@ const initialState = {
 };
 
 export const fetchCourses = createAsyncThunk('courses/fetchCourses', () => axios
-  .get('http://localhost:3000/api/courses')
+  .get('http://localhost:3001/api/courses')
   .then((response) => response.data));
 
 export const addCourse = createAsyncThunk('/courses/addCourse', async (course) => {
@@ -33,7 +33,7 @@ export const addCourse = createAsyncThunk('/courses/addCourse', async (course) =
   return result;
 });
 
-export const deleteCourse = createAsyncThunk('courses/deleteCourse', (id) => axios.delete(`http://localhost:3000/api/courses/${id}`).then((response) => {
+export const deleteCourse = createAsyncThunk('courses/deleteCourse', (id) => axios.delete(`http://localhost:3001/api/courses/${id}`).then((response) => {
   if (response.status === 200) {
     return id;
   }
