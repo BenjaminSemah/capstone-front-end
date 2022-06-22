@@ -41,25 +41,6 @@ export const addCourse = createAsyncThunk(
   },
 );
 
-export const addCourse = createAsyncThunk('/courses/addCourse', async (course) => {
-  const response = await fetch(apiURL, {
-    method: 'POST',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer',
-    body: JSON.stringify(course),
-  });
-
-  const result = await response.json();
-
-  return result;
-});
-
 export const deleteCourse = createAsyncThunk('courses/deleteCourse', (id) => axios.delete(`http://localhost:3000/api/courses/${id}`).then((response) => {
   if (response.status === 200) {
     return id;

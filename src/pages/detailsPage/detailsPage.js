@@ -16,7 +16,7 @@ const DetailsPage = () => {
       <section className="course">
         <div className="detail">
           <div className="detail-img">
-            <img src={courseDetails.image} />
+            <img src={courseDetails.image} alt="golf course" />
           </div>
           <div className="info">
             <h2>{courseDetails.name}</h2>
