@@ -30,7 +30,17 @@ const AddReservation = () => {
         <h1>Reserve Courses</h1>
         <div className="links">
           {/* <a href="/create">Reservations</a> */}
-          <a href="/">Courses</a>
+          <a
+            href="/"
+            style={{
+              color: 'white',
+              backgroundColor: '#f1356d',
+              borderRadius: '8px',
+            }}
+          >
+            Courses
+
+          </a>
         </div>
       </nav>
       <form className="delete-courses">
