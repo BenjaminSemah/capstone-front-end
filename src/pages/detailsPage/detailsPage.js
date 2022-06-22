@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import './detailsPage.css';
 import { fetchCourseID } from '../../redux/coursesSlice';
 
 const DetailsPage = () => {
   const courseDetails = useSelector(({ course }) => course.detail);
-  console.log(courseDetails);
   const { id } = useParams();
-  console.log(id);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCourseID(id));
@@ -24,17 +21,18 @@ const DetailsPage = () => {
           <div className="info">
             <h2>{courseDetails.name}</h2>
             <div className="description">{courseDetails.description}</div>
-            <div className="items neutral" >
-                <div>City</div>
-                <div className="city">{courseDetails.location}</div>
+            <div className="items neutral">
+              <div>City</div>
+              <div className="city">{courseDetails.location}</div>
             </div>
-            <div className="items" >
+            <div className="items">
               <div>Price of Course</div>
               <div className="price-course">
-                ${courseDetails.price}
+                $
+                {courseDetails.price}
               </div>
             </div>
-            <div className="items neutral" >
+            <div className="items neutral">
               <div>Duration</div>
               <div className="price-course">
                 2 Days
@@ -52,15 +50,15 @@ const DetailsPage = () => {
           </div>
         </div>
         <div className="back">
-              <Link to="/">
-                <button type="button" className="btn1">
-                  <img
-                    src="https://www.svgrepo.com/show/310609/caret-left.svg"
-                    alt="left"
-                  />
-                </button>
-              </Link>
-            </div>
+          <Link to="/">
+            <button type="button" className="btn1">
+              <img
+                src="https://www.svgrepo.com/show/310609/caret-left.svg"
+                alt="left"
+              />
+            </button>
+          </Link>
+        </div>
       </section>
     </>
   );

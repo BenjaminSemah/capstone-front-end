@@ -1,111 +1,111 @@
 .course {
-      margin-left: 18rem;
+  margin-left: 18rem;
 }
 
 .detail {
-      display: flex;
-      padding: 0 1rem;
-      margin-top: 1rem;
+  display: flex;
+  padding: 0 1rem;
+  margin-top: 1rem;
 }
 
 img {
-      width: 100%;
-      max-height: 80vh;
-      border-radius: 20px;
+  width: 100%;
+  max-height: 80vh;
+  border-radius: 20px;
 }
 
 .detail-img {
-      flex: 70%;
-      padding: 0 1rem;
-      text-align: center;
+  flex: 70%;
+  padding: 0 1rem;
+  text-align: center;
 }
 
 .info {
-      flex: 30%;
-      padding: 0 1rem;
+  flex: 30%;
+  padding: 0 1rem;
 }
 
 .name {
-      font-size: 2rem;
-      text-align: right;
+  font-size: 2rem;
+  text-align: right;
 }
 
 .description {
-      font-size: 1rem;
-      text-align: right;
-      margin-bottom: 3rem;
+  font-size: 1rem;
+  text-align: right;
+  margin-bottom: 3rem;
 }
 
 .items {
-      display: flex;
-      justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .items > * {
-      padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .neutral {
-      background-color: rgb(201, 199, 199);
-      border-radius: 5px;
+  background-color: rgb(201, 199, 199);
+  border-radius: 5px;
 }
 
 .reserve {
-      margin: 1rem 0;
-      text-align: right;
+  margin: 1rem 0;
+  text-align: right;
 }
 
 .btn {
-      padding: 0.75rem 1rem;
-      border-radius: 2rem;
-      background-color: #78ba1c;
-      border: none;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-      display: flex;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  background-color: #78ba1c;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
 }
 
 .btn > * {
-      margin: 0 0.25rem;
+  margin: 0 0.25rem;
 }
 
 .back {
-      padding: 0.5rem 2rem;
-      text-align: left;
+  padding: 0.5rem 2rem;
+  text-align: left;
 }
 
 .btn1 {
-      padding: 0.75rem 1rem 0.75rem 2rem;
-      border-top-right-radius: 2rem;
-      border-bottom-right-radius: 2rem;
-      background-color: #78ba1c;
-      border: none;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
+  padding: 0.75rem 1rem 0.75rem 2rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  background-color: #78ba1c;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .btn2 > * {
-      margin: 5rem;
+  margin: 5rem;
 }
 
 @media (max-width: 760px) {
-      .detail {
-        display: flex;
-        flex-direction: column;
-        padding: 0 0.7rem;
-      }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.7rem;
+  }
 }
 
 @media (max-width: 500px) {
-      .course {
-        margin-left: 0;
-      }
+  .course {
+    margin-left: 0;
+  }
 
-      .detail {
-        display: flex;
-        flex-direction: column;
-        padding: 0 0.7rem;
-      }
+  .detail {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.7rem;
+  }
 }
