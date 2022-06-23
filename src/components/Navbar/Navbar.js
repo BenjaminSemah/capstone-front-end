@@ -40,6 +40,7 @@ function Navbar() {
                 <FaIcons.FaFacebook className="social-icons" />
                 <FaIcons.FaGooglePlus className="social-icons" />
                 <FaIcons.FaVimeo className="social-icons" />
+                <FaIcons.FaPinterest className="social-icons" />
             </div>
           </ul>
         </nav>
