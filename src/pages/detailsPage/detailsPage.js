@@ -1,37 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { createReservation } from '../../redux/reservationSlice';
-import decoded from '../../helpers/token';
 import './detailsPage.css';
 import { fetchCourseID } from '../../redux/coursesSlice';
 
 const DetailsPage = () => {
   const courseDetails = useSelector(({ course }) => course.detail);
-  const dispatch = useDispatch();
   const { id } = useParams();
-  const [city, setCity] = useState('');
-  const [date, setDate] = useState('');
-
-  const createReserve = () => {
-    dispatch(createReservation({
-      city,
-      date,
-      user_id: decoded.sub,
-      course_id: id,
-    }));
-  };
-
-  const handleCity = (e) => {
-    setCity(e.target.value);
-  };
-
-  const handleDate = (e) => {
-    setDate(e.target.value);
-  };
-  const dispatches = useDispatch();
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatches(fetchCourseID(id));
+    dispatch(fetchCourseID(id));
   }, [id]);
   return (
     <>
@@ -60,19 +38,17 @@ const DetailsPage = () => {
                 2 Days
               </div>
             </div>
-            <form className="delete-courses">
-              <label htmlFor="city">
-                City:
-                <br />
-                <input id="city" name="city" onChange={handleCity} />
-              </label>
-              <label htmlFor="date">
-                Date:
-                <br />
-                <input id="date" name="date" onChange={handleDate} />
-              </label>
-              <button type="submit" onClick={createReserve}>Reserve</button>
-            </form>
+            <div className="reserve">
+              <Link to={{ pathname: `/add-reservations/${id}` }}>
+                <button type="button" className="detail_btn">
+                  Reserve
+                  <img
+                    src="https://www.svgrepo.com/show/310612/caret-right.svg"
+                    alt="left"
+                  />
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="back">
