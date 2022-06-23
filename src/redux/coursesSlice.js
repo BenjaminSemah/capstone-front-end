@@ -31,7 +31,6 @@ export const addCourse = createAsyncThunk(
       headers: {
         'Content-Type': 'application/json',
         Authorization: userToken,
-        
       },
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
