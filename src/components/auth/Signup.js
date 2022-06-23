@@ -43,60 +43,62 @@ const Register = () => {
   }, [state]);
 
   return (
-    <section>
-      <h2>Welcome</h2>
-      <form onSubmit={registerUser}>
-        <h4>Register</h4>
-        <div>
-          <input
-            type="email"
-            className="form-control"
-            id="Email1"
-            placeholder="Enter email"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            placeholder="Enter full name"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-          />
-        </div>
+    <section className="">
+      <div className="form-outline m-4 ">
+        <h2 className="mb-4 text-center">Welcome to your Home of Golf</h2>
+        <form onSubmit={registerUser}>
+          <h4 className="m-4 text-center">Register As New User</h4>
+          <div className="form-outline mb-4">
+            <input
+              type="email"
+              className="form-control"
+              id="Email1"
+              placeholder="Email Address"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </div>
+          <div className="form-outline mb-4">
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              placeholder="Full Name"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+            />
+          </div>
 
-        <div>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            placeholder="password"
-            onChange={(e) => setPassowrd(e.target.value)}
-            value={password}
-          />
+          <div className="form-outline mb-4">
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              placeholder="password"
+              onChange={(e) => setPassowrd(e.target.value)}
+              value={password}
+            />
+          </div>
+          <div className="form-outline mb-4">
+            <input
+              type="password"
+              className="form-control"
+              id="confirm_password"
+              placeholder="Confirm password"
+              onChange={(e) => setPasswordConfirmation(e.target.value)}
+              value={passwordConfirmation}
+            />
+          </div>
+          <button type="submit" className="btn btn-success btn-block mb-4 ">Register</button>
+        </form>
+        <div className="col-md-12 text-center">
+          <p>Already have an account?</p>
+          {' '}
+          <Link to="/login">
+            <button type="button" className="btn btn-success btn-block mb-4 ">Login</button>
+          </Link>
         </div>
-        <div>
-          <input
-            type="password"
-            className="form-control"
-            id="confirm_password"
-            placeholder="Confirm password"
-            onChange={(e) => setPasswordConfirmation(e.target.value)}
-            value={passwordConfirmation}
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
-      <p>
-        Already have an account?
-        {' '}
-        <Link to="/login" style={{ textDecoration: 'none' }}>
-          Login
-        </Link>
-      </p>
+      </div>
     </section>
   );
 };
