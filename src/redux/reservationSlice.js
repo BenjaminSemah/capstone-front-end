@@ -24,7 +24,9 @@ export const createReservation = createAsyncThunk(
   async (reserve) => {
     const reserveData = await axios.post(
       'http://localhost:3001/api/reservations',
-      reserve,
+      reserve, {
+        headers: { Authorization: userToken },
+      },
     );
     return reserveData.data;
   },
