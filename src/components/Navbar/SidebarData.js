@@ -13,7 +13,7 @@ const SidebarData = [
   {
     id: 2,
     title: 'Reservations',
-    path: '/',
+    path: '/reservations',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text',
   },
