@@ -26,10 +26,11 @@ function App() {
   }, []);
   return (
     <Router>
-      <Navbar />
+      {' '}
       <NavLink to="/login" onClick={() => dispatch(APIuserLogOut(authuser))}>
         Sign Out
       </NavLink>
+      <Navbar />
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Home />} />

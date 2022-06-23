@@ -1,3 +1,4 @@
+/* eslint-disable*/
 import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
@@ -12,13 +13,13 @@ function Navbar() {
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
-    <>
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <div className="navbar">
+    <div className="navbar-container">
+      <IconContext.Provider value={{ color: '#97bf0f' }}>
+        <span className="navbar">
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-        </div>
+        </span>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
@@ -37,7 +38,7 @@ function Navbar() {
           </ul>
         </nav>
       </IconContext.Provider>
-    </>
+    </div>
   );
 }
 
