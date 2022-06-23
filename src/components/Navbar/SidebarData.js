@@ -1,5 +1,4 @@
 import React from 'react';
-import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 
@@ -22,14 +21,14 @@ const SidebarData = [
     id: 3,
     title: 'Add course',
     path: '/add-course',
-    icon: <FaIcons.FaEnvelopeOpenText />,
+    icon: <AiIcons.AiFillFolderAdd />,
     cName: 'nav-text',
   },
   {
     id: 4,
     title: 'Delete course',
     path: '/delete-course',
-    icon: <AiIcons.AiTwotoneShopping />,
+    icon: <AiIcons.AiFillDelete />,
     cName: 'nav-text',
   },
 ];

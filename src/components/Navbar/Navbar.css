@@ -56,7 +56,7 @@
 }
 
 .nav-text a:hover {
-  background-color: #1a83ff;
+  background-color: #97bf0f;
 }
 
 .nav-menu-items {
@@ -73,4 +73,13 @@
 
 span {
   margin-left: 16px;
+}
+
+.social-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  gap: 20px;
+  margin-top: 209px;
 }
