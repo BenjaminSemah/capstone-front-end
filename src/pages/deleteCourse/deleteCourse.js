@@ -7,12 +7,21 @@ import './deleteCourse.css';
 
 const DeleteCourse = () => {
   const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.currentUserr.current);
   const data = useSelector(({ course }) => course);
   const { courses, loading } = data;
   if (loading) {
     return (
       <div className="d-flex justify-content-center">
         <Loader />
+      </div>
+    );
+  }
+  if (!currentUser.admin) {
+    return (
+      <div className="text-center my-4">
+        <h2 className="text-danger">You Are Not Authorised To Remove a Course</h2>
+        <h3 className="my-4">Please Log in as Admin</h3>
       </div>
     );
   }
