@@ -21,8 +21,7 @@ function App() {
   const authuser = localStorage.getItem('userAuth');
   const dispatch = useDispatch();
   useEffect(() => {
-    const user = localStorage.getItem('userAuth');
-    dispatch(fetchCourses(user));
+    dispatch(fetchCourses(authuser));
   }, []);
   return (
     <Router>
