@@ -7,6 +7,7 @@ import './deleteCourse.css';
 
 const DeleteCourse = () => {
   const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.currentUserr.current);
   const data = useSelector(({ course }) => course);
   const { courses, loading } = data;
   if (loading) {
@@ -15,6 +16,9 @@ const DeleteCourse = () => {
         <Loader />
       </div>
     );
+  }
+  if (!currentUser.admin) {
+    return <h2>you are not authorized to delete course</h2>;
   }
   return (
     <div className="delete-courses pt-4">

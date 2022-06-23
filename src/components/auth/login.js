@@ -34,12 +34,13 @@ const Login = () => {
     }
   }, [state]);
   return (
-    <section>
-      <h2>Welcome back</h2>
+    <section className="form-outline m-4 text-center">
 
-      <form onSubmit={loginUser}>
+      <h2 className=" m-4 ">Welcome back</h2>
+
+      <form onSubmit={loginUser} className=" m-4 text-center">
         <h4>Member Login</h4>
-        <div>
+        <div className=" m-4">
           <input
             type="email"
             className="form-control"
@@ -50,7 +51,7 @@ const Login = () => {
           />
         </div>
 
-        <div>
+        <div className=" m-4">
           <input
             type="password"
             className="form-control"
@@ -60,16 +61,13 @@ const Login = () => {
             value={password}
           />
         </div>
-
-        <button type="submit">Submit</button>
+        <div className="d-flex justify-content-around">
+          <button type="submit" className="btn btn-success px-4">Log In</button>
+          <Link to="/register">
+            <button type="button" className="btn btn-success">Register</button>
+          </Link>
+        </div>
       </form>
-      <p>
-        New here?
-        {' '}
-        <Link to="/register" style={{ textDecoration: 'none' }}>
-          Register
-        </Link>
-      </p>
     </section>
   );
 };

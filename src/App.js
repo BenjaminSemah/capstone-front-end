@@ -8,6 +8,7 @@ import {
 import { useDispatch } from 'react-redux';
 import './App.css';
 import { fetchCourses } from './redux/coursesSlice';
+import { fetchCurrent } from './redux/currentUserSlice';
 import Register from './components/auth/Signup';
 import Login from './components/auth/login';
 import Home from './pages/home/home';
@@ -22,6 +23,7 @@ function App() {
   const authuser = localStorage.getItem('userAuth');
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(fetchCurrent());
     dispatch(fetchCourses(authuser));
   }, []);
 
