@@ -16,6 +16,22 @@ const DeleteCourse = () => {
       </div>
     );
   }
+
+  const handleConditionalRendering = (user) => {
+    if (user && !user.error) {
+      if (user.role !== 'admin') {
+        return (
+          <p>You&lsquo;re not allowed to delete Golf Courses</p>
+        );
+      }
+      return (
+       
+      );
+    }
+    return (
+      <div>Please Log In before deleting billionaires</div>
+    );
+  };
   return (
     <div className="delete-courses pt-4">
       <Container>

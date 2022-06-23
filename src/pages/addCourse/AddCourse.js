@@ -3,6 +3,7 @@ import AddCourseForm from '../../components/AddCourseForm';
 import './AddCourse.css';
 
 export default function AddCourse() {
+  
   return (
     <div className="newCourse--form">
       <div className="add--course">
