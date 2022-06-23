@@ -2,7 +2,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const apiURL = 'http://localhost:3000/api/courses';
+const apiURL = 'http://localhost:3001/api/courses';
+const userToken = JSON.parse(localStorage.getItem('userAuth'));
 
 const initialState = {
   loading: false,
@@ -11,9 +12,9 @@ const initialState = {
   detail: {},
 };
 
-export const fetchCourses = createAsyncThunk('courses/fetchCourses', () => axios
-  .get('http://localhost:3000/api/courses')
-  .then((response) => response.data));
+export const fetchCourses = createAsyncThunk('courses/fetchCourses', () => fetch(`${apiURL}`, {
+  headers: { Authorization: userToken },
+}).then((resp) => resp.json()));
 
 export const fetchCourseID = createAsyncThunk('course/fetchCourseID', (id) => axios
   .get(`http://localhost:3000/api/courses/${id}`)
@@ -29,6 +30,7 @@ export const addCourse = createAsyncThunk(
       credentials: 'same-origin',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: userToken,
       },
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
@@ -41,12 +43,16 @@ export const addCourse = createAsyncThunk(
   },
 );
 
-export const deleteCourse = createAsyncThunk('courses/deleteCourse', (id) => axios.delete(`http://localhost:3000/api/courses/${id}`).then((response) => {
-  if (response.status === 200) {
-    return id;
-  }
-  return false;
-}));
+export const deleteCourse = createAsyncThunk('courses/deleteCourse', (id) => axios
+  .delete(`${apiURL}/${id}`, {
+    headers: { Authorization: userToken },
+  })
+  .then((response) => {
+    if (response.status === 200) {
+      return id;
+    }
+    return false;
+  }));
 
 const courseSlice = createSlice({
   name: 'course',
@@ -69,6 +75,7 @@ const courseSlice = createSlice({
         state.courses = state.courses.filter((c) => c.id !== action.payload);
       }
     });
+
     builder.addCase(fetchCourseID.fulfilled, (state, action) => {
       state.detail = action.payload;
     });
