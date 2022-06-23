@@ -1,4 +1,4 @@
-.course {
+.detail-page-course {
   margin-left: 18rem;
 }
 
@@ -20,7 +20,7 @@ img {
   text-align: center;
 }
 
-.info {
+.detail_info {
   flex: 30%;
   padding: 0 1rem;
 }
@@ -30,18 +30,18 @@ img {
   text-align: right;
 }
 
-.description {
+.detail_description {
   font-size: 1rem;
   text-align: right;
   margin-bottom: 3rem;
 }
 
-.items {
+.detail_items {
   display: flex;
   justify-content: space-between;
 }
 
-.items > * {
+.detail_items > * {
   padding: 0.5rem 1rem;
 }
 
@@ -99,7 +99,7 @@ img {
 }
 
 @media (max-width: 500px) {
-  .course {
+  .detail-page-course {
     margin-left: 0;
   }
 
