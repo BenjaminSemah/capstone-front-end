@@ -39,7 +39,7 @@ const DetailsPage = () => {
               </div>
             </div>
             <div className="reserve">
-              <button type="button" className="btn">
+              <button type="button" className="detail_btn">
                 Reserve
                 <img
                   src="https://www.svgrepo.com/show/310612/caret-right.svg"
