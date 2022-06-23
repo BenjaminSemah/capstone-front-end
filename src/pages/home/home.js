@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       {!authuser ? (
-        <div className="grid text-center my-4">
+        <div className="text-center my-4">
           <h2>
             {' '}
             To see this page you need to
