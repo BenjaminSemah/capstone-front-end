@@ -5,7 +5,8 @@
 
 .delete-courses::after {
   content: '';
-  background: url('https://pngimg.com/uploads/golf/golf_PNG9.png') no-repeat
+  background:
+    url('https://pngimg.com/uploads/golf/golf_PNG9.png') no-repeat
       center center,
     linear-gradient(#96bf00, #96bf0000);
   position: fixed;
