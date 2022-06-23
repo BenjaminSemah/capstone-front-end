@@ -15,7 +15,7 @@ const Home = () => {
           </h2>
           <h3>
             <Link to="/login" style={{ textDecoration: 'none' }}>
-              <span className="something">Login</span>
+              <span>Login</span>
             </Link>
           </h3>
         </div>
