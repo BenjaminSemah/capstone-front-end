@@ -8,13 +8,17 @@ const Home = () => {
   return (
     <>
       {!authuser ? (
-        <h2 className="d-flex justify-content-center">
-          {' '}
-          you need to
-          <Link to="/login" style={{ textDecoration: 'none' }}>
-            <span className="fs-6">Login</span>
-          </Link>
-        </h2>
+        <div className="grid text-center my-4">
+          <h2>
+            {' '}
+            To see this page you need to
+          </h2>
+          <h3>
+            <Link to="/login" className="mt-4" style={{ textDecoration: 'none' }}>
+              <span>Login</span>
+            </Link>
+          </h3>
+        </div>
       ) : (
         <Pagination />
       )}
