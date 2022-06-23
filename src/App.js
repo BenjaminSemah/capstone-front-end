@@ -15,6 +15,8 @@ import DeleteCourse from './pages/deleteCourse/deleteCourse';
 import DetailsPage from './pages/detailsPage/detailsPage';
 import AddCourse from './pages/addCourse/AddCourse';
 import { APIuserLogOut } from './redux/auth';
+import Reservation from './pages/Reservation/Reservation';
+import AddReservation from './pages/Reservation/AddReservation';
 
 function App() {
   const authuser = localStorage.getItem('userAuth');
@@ -22,6 +24,7 @@ function App() {
   useEffect(() => {
     dispatch(fetchCourses(authuser));
   }, []);
+
   return (
     <Router>
       <NavLink to="/login" onClick={() => dispatch(APIuserLogOut(authuser))}>
@@ -35,6 +38,8 @@ function App() {
           <Route path="/add-course" element={<AddCourse />} />
           <Route exact path="/delete-course" element={<DeleteCourse />} />
           <Route path="/details/:id" element={<DetailsPage />} />
+          <Route exact path="/add-reservations" element={<AddReservation />} />
+          <Route exact path="/reservations" element={<Reservation />} />
         </Routes>
       </div>
     </Router>
