@@ -35,6 +35,9 @@ function Navbar() {
                 </Link>
               </li>
             ))}
+            <div className="social-menu">
+                <FaIcons.FaTwitter className="social-icons" />
+            </div>
           </ul>
         </nav>
       </IconContext.Provider>
