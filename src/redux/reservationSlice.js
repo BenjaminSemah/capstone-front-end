@@ -8,14 +8,24 @@ const initialState = {
   error: '',
 };
 
-export const fetchReservations = createAsyncThunk('courses/fetchReservations', () => axios
-  .get('http://localhost:3001/api/reservations')
-  .then((response) => response.data));
+const userToken = JSON.parse(localStorage.getItem('userAuth'));
+
+export const fetchReservations = createAsyncThunk(
+  'courses/fetchReservations',
+  () => axios
+    .get('http://localhost:3001/api/reservations', {
+      headers: { Authorization: userToken },
+    })
+    .then((response) => response.data),
+);
 
 export const createReservation = createAsyncThunk(
   'reservations/createReservation',
   async (reserve) => {
-    const reserveData = await axios.post('http://localhost:3001/api/reservations', reserve);
+    const reserveData = await axios.post(
+      'http://localhost:3001/api/reservations',
+      reserve,
+    );
     return reserveData.data;
   },
 );
