@@ -38,6 +38,7 @@ function Navbar() {
             <div className="social-menu">
                 <FaIcons.FaTwitter className="social-icons" />
                 <FaIcons.FaFacebook className="social-icons" />
+                <FaIcons.FaGooglePlus className="social-icons" />
             </div>
           </ul>
         </nav>
