@@ -17,7 +17,9 @@ export const fetchCourses = createAsyncThunk('courses/fetchCourses', () => fetch
 }).then((resp) => resp.json()));
 
 export const fetchCourseID = createAsyncThunk('course/fetchCourseID', (id) => axios
-  .get(`http://localhost:3000/api/courses/${id}`)
+  .get(`${apiURL}/${id}`, {
+    headers: { Authorization: userToken },
+  })
   .then((response) => response.data));
 
 export const addCourse = createAsyncThunk(
