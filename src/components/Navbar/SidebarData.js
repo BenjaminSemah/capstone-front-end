@@ -17,13 +17,13 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: '',
+        title: 'Add course',
         path: '/',
         icon: <FaIcons.FaCartPlus />,
         cName: 'nav-text'
     },
     {
-        title: 'Home',
+        title: 'Delete course',
         path: '/',
         icon: <AiIcons.AiFillHome />,
         cName: 'nav-text'
