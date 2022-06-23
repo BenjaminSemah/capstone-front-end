@@ -6,17 +6,14 @@ import { addCourse } from '../redux/coursesSlice';
 export default function AddCourseForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const [courseData, setCourseData] = useState(
-    {
-      name: '',
-      description: '',
-      location: '',
-      size: '',
-      price: '',
-      image: '',
-    },
-  );
+  const [courseData, setCourseData] = useState({
+    name: '',
+    description: '',
+    location: '',
+    size: '',
+    price: '',
+    image: '',
+  });
 
   const handleFormChange = (event) => {
     setCourseData((prevData) => {
@@ -36,10 +33,7 @@ export default function AddCourseForm() {
 
   return (
     <>
-      <form
-        className="addCourse--form"
-        onSubmit={handleFormSubmit}
-      >
+      <form className="addCourse--form" onSubmit={handleFormSubmit}>
         <input
           className="form--input"
           type="text"
@@ -87,10 +81,7 @@ export default function AddCourseForm() {
           onChange={handleFormChange}
           value={courseData.image}
         />
-        <button
-          className="submit--btn"
-          type="submit"
-        >
+        <button className="submit--btn" type="submit">
           Add New Course
         </button>
       </form>
