@@ -9,11 +9,16 @@ const initialState = {
   loading: false,
   courses: [],
   error: '',
+  detail: {},
 };
 
 export const fetchCourses = createAsyncThunk('courses/fetchCourses', () => fetch(`${apiURL}`, {
   headers: { Authorization: userToken },
 }).then((resp) => resp.json()));
+
+export const fetchCourseID = createAsyncThunk('course/fetchCourseID', (id) => axios
+  .get(`http://localhost:3000/api/courses/${id}`)
+  .then((response) => response.data));
 
 export const addCourse = createAsyncThunk(
   '/courses/addCourse',
@@ -26,6 +31,7 @@ export const addCourse = createAsyncThunk(
       headers: {
         'Content-Type': 'application/json',
         Authorization: userToken,
+        
       },
       redirect: 'follow',
       referrerPolicy: 'no-referrer',
@@ -70,10 +76,12 @@ const courseSlice = createSlice({
         state.courses = state.courses.filter((c) => c.id !== action.payload);
       }
     });
-    builder.addCase(addCourse.fulfilled, (state, action) => {
-      if (action.payload.id) {
-        state.courses = [action.payload, ...state.courses];
-      }
+
+    builder.addCase(fetchCourseID.fulfilled, (state, action) => {
+      state.detail = action.payload;
+    });
+    builder.addCase(fetchCourseID.rejected, (state, action) => {
+      state.error = action.error.message;
     });
   },
 });

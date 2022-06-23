@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Book A Golf Course (Front-end)
 
-## Available Scripts
+This is the React front-end repository for an Golf course booking web-application. We use React for the front-end, and Ruby on Rails for the back-end.
 
-In the project directory, you can run:
+Visit the [Back-end repository.](https://github.com/omarsalem7/capstone-back-end)
 
-### `npm start`
+## Preview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![homepage](https://user-images.githubusercontent.com/64237087/175143345-ee538384-06a1-4eff-8adc-d86da535d707.png)
+![detailPage](https://user-images.githubusercontent.com/64237087/175143462-a41ff61e-c9ed-45c6-a06a-3812f7409fae.png)
+![addCourse](https://user-images.githubusercontent.com/64237087/175143488-0a6d9acd-3e74-46b8-b504-f208e87ae033.png)
+![deleteCourse](https://user-images.githubusercontent.com/64237087/175143504-3654f187-c9b0-40d1-842b-9cccbd938037.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Live version
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [App (Front-end)]()
+- [Back-end]()
 
-### `npm run build`
+## Built With
+- React
+- Redux
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
+- Follow setup instructions below
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React
+- Git and Github
+- Terminal
+- Browser
 
-### `npm run eject`
+### Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Follow [this link](https://github.com/omarsalem7/capstone-back-end) to visit the [back-end repository](https://github.com/omarsalem7/capstone-back-end.git) and start the server on localhost:3000.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Clone this repository `https://github.com/BenjaminSemah/capstone-front-end.git`
+- Cd or navigate into the directory and run `npm install` to install dependencies
+- Run `npm start`
+- Visit `localhost:3001` in your browser
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Suggestions:
+Back-end should run in **localhost:3000**
+Front-end should run in **localhost:3001**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Credits
 
-## Learn More
+## Authors
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Omar Salem**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- GitHub: [Omar Salem](https://github.com/omarsalem7)
+- Twitter: [Omar Salem](https://twitter.com/Omar80491499)
+- LinkedIn: [Omar Salem](https://www.linkedin.com/in/omar-salem-a6945b177/)
 
-### Code Splitting
+👤 **Stephan**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- GitHub: [@stephan](https://github.com/sneeu-leeu)
+- Twitter: [@Stephan](https://twitter.com/Stephan07484055)
+- LinkedIn: [Stephan Annandale](https://www.linkedin.com/in/stephan-annandale-a4b4931a9/)
+  
+👤 **Josphat Nkonde**
 
-### Analyzing the Bundle Size
+- GitHub: [@zairdon20](https://github.com/zairdon20)
+- Twitter: [@josphat1 nkonde](https://twitter.com/josphat-nkonde)
+- LinkedIn: [@josphat nkonde](https://www.linkedin.com/in/josphat-nkonde)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+👤 **Benjmain Semah**
 
-### Making a Progressive Web App
+- GitHub: [@BenjaminSemah](https://github.com/BenjaminSemah)
+- Twitter: [@BenjaminSemah](https://twitter.com/BenjaminSemah)
+- LinkedIn: [@BenjaminSemah](https://www.linkedin.com/in/benjaminsemah/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+👤 **Butler shimalwani**
 
-### Advanced Configuration
+- GitHub: [@Butlermuwo](https://github.com/butlermuwo)
+- Twitter: [@Butlermuwo](https://twitter.com/ButlerMuwo)
+- LinkedIn: [@Butlermuwo](https://www.linkedin.com/in/butlermuwo)
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contributions, issues, and feature requests are welcome!
 
-### Deployment
+Feel free to check the [issues page](../../issues/).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Show your support
 
-### `npm run build` fails to minify
+Give a ⭐️ if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+
+- [Microverse](https://www.microverse.org/)
+- Original Design idea by [Murat Korkmaz](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

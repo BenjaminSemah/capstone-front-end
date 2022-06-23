@@ -12,6 +12,7 @@ import Register from './components/auth/Signup';
 import Login from './components/auth/login';
 import Home from './pages/home/home';
 import DeleteCourse from './pages/deleteCourse/deleteCourse';
+import DetailsPage from './pages/detailsPage/detailsPage';
 import AddCourse from './pages/addCourse/AddCourse';
 import { APIuserLogOut } from './redux/auth';
 
@@ -23,22 +24,21 @@ function App() {
     dispatch(fetchCourses(user));
   }, []);
   return (
-    <>
-      <Router>
-        <NavLink to="/login" onClick={() => dispatch(APIuserLogOut(authuser))}>
-          Sign Out
-        </NavLink>
-        <div className="App">
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/add-course" element={<AddCourse />} />
-            <Route exact path="/delete-course" element={<DeleteCourse />} />
-          </Routes>
-        </div>
-      </Router>
-    </>
+    <Router>
+      <NavLink to="/login" onClick={() => dispatch(APIuserLogOut(authuser))}>
+        Sign Out
+      </NavLink>
+      <div className="App">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/add-course" element={<AddCourse />} />
+          <Route exact path="/delete-course" element={<DeleteCourse />} />
+          <Route path="/details/:id" element={<DetailsPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
