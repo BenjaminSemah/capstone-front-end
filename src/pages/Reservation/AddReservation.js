@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createReservation } from '../../redux/reservationSlice';
+import decoded from '../../helpers/token';
 
 const AddReservation = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const AddReservation = () => {
     dispatch(createReservation({
       city,
       date,
-      user_id: 1,
+      user_id: decoded.sub,
       course_id: 1,
     }));
   };
@@ -26,23 +27,6 @@ const AddReservation = () => {
 
   return (
     <>
-      <nav className="navbar">
-        <h1>Reserve Courses</h1>
-        <div className="links">
-          {/* <a href="/create">Reservations</a> */}
-          <a
-            href="/"
-            style={{
-              color: 'white',
-              backgroundColor: '#f1356d',
-              borderRadius: '8px',
-            }}
-          >
-            Courses
-
-          </a>
-        </div>
-      </nav>
       <form className="delete-courses">
         <label htmlFor="city">
           City:
