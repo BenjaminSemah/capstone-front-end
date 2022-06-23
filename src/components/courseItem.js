@@ -6,8 +6,8 @@ import { Col } from 'react-bootstrap';
 const CourseItem = ({
   name, description, image, id,
 }) => (
-  <Link to={`/details/${id}`}>
-    <Col className="text-center" xs={12} md={4}>
+  <Col className="text-center" xs={12} md={4}>
+    <Link to={`/details/${id}`} style={{ textDecoration: 'none', color: '#97bf0f' }}>
       <img
         draggable={false}
         className="rounded-circle home-img"
@@ -18,8 +18,8 @@ const CourseItem = ({
         <p className="fw-bold">{name.toUpperCase()}</p>
         <p>{description}</p>
       </div>
-    </Col>
-  </Link>
+    </Link>
+  </Col>
 );
 
 CourseItem.propTypes = {

@@ -5,7 +5,10 @@
 
 .delete-courses::after {
   content: '';
-  background: url('https://pngimg.com/uploads/golf/golf_PNG9.png') no-repeat center center, linear-gradient(#96bf00, #96bf0000);
+  background:
+    url('https://pngimg.com/uploads/golf/golf_PNG9.png') no-repeat
+    center center,
+    linear-gradient(#96bf00, #96bf0000);
   position: fixed;
   top: 0;
   left: 0;
@@ -24,4 +27,14 @@
 .delete-courses .main-title,
 .delete-courses p {
   color: #88ae00;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  background-color: #78ba1c;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
