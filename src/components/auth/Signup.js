@@ -89,9 +89,15 @@ const Register = () => {
               value={passwordConfirmation}
             />
           </div>
-          <button type="submit" className="btn btn-success btn-block mb-4 ">Register</button>
+          <div className="">
+            <div className="row">
+              <div className="col-12 text-center">
+                <button type="submit" className="btn btn-success btn-block mb-4">Register</button>
+              </div>
+            </div>
+          </div>
         </form>
-        <div className="col-md-12 text-center">
+        <div className="col-md-12 col-lg-12 col-sml-12  text-center">
           <p>Already have an account?</p>
           {' '}
           <Link to="/login">
