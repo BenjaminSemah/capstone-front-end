@@ -43,7 +43,7 @@ const Register = () => {
   }, [state]);
 
   return (
-    <section className="form-outline m-4 text-center">
+    // <section className="form-outline m-4 text-center">
       <h2 className="mb-4 ">Welcome to your Home of Golf</h2>
       <form onSubmit={registerUser}>
         <h4 className="m-4">Register As New User</h4>
