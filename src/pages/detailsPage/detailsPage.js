@@ -39,13 +39,15 @@ const DetailsPage = () => {
               </div>
             </div>
             <div className="reserve">
-              <button type="button" className="detail_btn">
-                Reserve
-                <img
-                  src="https://www.svgrepo.com/show/310612/caret-right.svg"
-                  alt="left"
-                />
-              </button>
+              <Link to={{ pathname: `/add-reservations/${id}` }}>
+                <button type="button" className="detail_btn">
+                  Reserve
+                  <img
+                    src="https://www.svgrepo.com/show/310612/caret-right.svg"
+                    alt="left"
+                  />
+                </button>
+              </Link>
             </div>
           </div>
         </div>

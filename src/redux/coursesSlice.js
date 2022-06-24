@@ -77,7 +77,6 @@ const courseSlice = createSlice({
         state.courses = state.courses.filter((c) => c.id !== action.payload);
       }
     });
-
     builder.addCase(fetchCourseID.fulfilled, (state, action) => {
       state.detail = action.payload;
     });
