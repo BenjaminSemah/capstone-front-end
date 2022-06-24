@@ -19,14 +19,14 @@ const DeleteCourse = () => {
   }
   if (!currentUser.admin) {
     return (
-      <div className="text-center my-4">
+      <div className="text-center pt-5">
         <h2 className="text-danger">You Are Not Authorised To Remove a Course</h2>
         <h3 className="my-4">Please Log in as Admin</h3>
       </div>
     );
   }
   return (
-    <div className="delete-courses pt-4">
+    <div className="delete-courses pt-5">
       <Container>
         <div className="text-center">
           <h1 className="main-title">Delete Courses</h1>

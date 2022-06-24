@@ -13,7 +13,7 @@ const DetailsPage = () => {
   }, [id]);
   return (
     <>
-      <section className="detail-page-course">
+      <section className="detail-page-course pt-4">
         <div className="detail">
           <div className="detail-img">
             <img src={courseDetails.image} alt="golf course" />

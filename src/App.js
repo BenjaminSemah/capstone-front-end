@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  NavLink,
 } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import './App.css';
@@ -15,22 +14,16 @@ import Home from './pages/home/home';
 import DeleteCourse from './pages/deleteCourse/deleteCourse';
 import DetailsPage from './pages/detailsPage/detailsPage';
 import AddCourse from './pages/addCourse/AddCourse';
-import { APIuserLogOut } from './redux/auth';
 import Navbar from './components/Navbar/Navbar';
 
 function App() {
-  const authuser = localStorage.getItem('userAuth');
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCurrent());
-    dispatch(fetchCourses(authuser));
+    dispatch(fetchCourses());
   }, []);
   return (
     <Router>
-      {' '}
-      <NavLink to="/login" onClick={() => dispatch(APIuserLogOut(authuser))}>
-        Sign Out
-      </NavLink>
       <Navbar />
       <div className="App">
         <Routes>
