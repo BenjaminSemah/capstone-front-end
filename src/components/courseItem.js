@@ -15,7 +15,7 @@ const CourseItem = ({
         alt={name}
       />
       <div>
-        <p className="fw-bold">{name.toUpperCase()}</p>
+        <p className="fw-bold">{name}</p>
         <p>{description}</p>
       </div>
     </Link>

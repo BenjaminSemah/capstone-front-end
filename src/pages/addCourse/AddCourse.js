@@ -9,7 +9,10 @@ export default function AddCourse() {
   return (
     <>
       {!currentUser.admin ? (
-        <h2>you are not authorized</h2>
+        <div className="text-center my-4">
+          <h2 className="text-danger">You Are Not Authorised To Add a Course</h2>
+          <h3 className="my-4">Please Log in as Admin</h3>
+        </div>
       ) : (
         <div className="newCourse--form">
           <div className="add--course">

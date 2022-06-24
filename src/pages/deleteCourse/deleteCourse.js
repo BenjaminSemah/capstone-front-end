@@ -18,7 +18,12 @@ const DeleteCourse = () => {
     );
   }
   if (!currentUser.admin) {
-    return <h2>you are not authorized to delete course</h2>;
+    return (
+      <div className="text-center my-4">
+        <h2 className="text-danger">You Are Not Authorised To Remove a Course</h2>
+        <h3 className="my-4">Please Log in as Admin</h3>
+      </div>
+    );
   }
   return (
     <div className="delete-courses pt-4">

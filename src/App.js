@@ -18,6 +18,7 @@ import AddCourse from './pages/addCourse/AddCourse';
 import { APIuserLogOut } from './redux/auth';
 import Reservation from './pages/Reservation/Reservation';
 import AddReservation from './pages/Reservation/AddReservation';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   const authuser = localStorage.getItem('userAuth');
@@ -29,9 +30,11 @@ function App() {
 
   return (
     <Router>
+      {' '}
       <NavLink to="/login" onClick={() => dispatch(APIuserLogOut(authuser))}>
         Sign Out
       </NavLink>
+      <Navbar />
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Home />} />

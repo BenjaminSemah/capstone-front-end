@@ -1,7 +1,5 @@
-/*eslint-disable*/
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
 import Pagination from '../../components/pagination';
 import './home.css';
 
@@ -10,13 +8,17 @@ const Home = () => {
   return (
     <>
       {!authuser ? (
-        <h2 className="d-flex justify-content-center">
-          {' '}
-          you need to
-          <Link to="/login" style={{ textDecoration: 'none' }}>
-            <span className="fs-6">Login</span>
-          </Link>
-        </h2>
+        <div className="text-center my-4">
+          <h2>
+            {' '}
+            To see this page you need to
+          </h2>
+          <h3>
+            <Link to="/login" style={{ textDecoration: 'none' }}>
+              <span>Login</span>
+            </Link>
+          </h3>
+        </div>
       ) : (
         <Pagination />
       )}
