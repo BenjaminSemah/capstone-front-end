@@ -8,6 +8,7 @@ import './deleteCourse.css';
 const DeleteCourse = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.currentUserr.current);
+  const userToken = JSON.parse(localStorage.getItem('userAuth'));
   const data = useSelector(({ course }) => course);
   const { courses, loading } = data;
   if (loading) {
@@ -17,10 +18,12 @@ const DeleteCourse = () => {
       </div>
     );
   }
-  if (!currentUser.admin) {
+  if (!currentUser.admin || !userToken) {
     return (
       <div className="text-center pt-5">
-        <h2 className="text-danger">You Are Not Authorised To Remove a Course</h2>
+        <h2 className="text-danger">
+          You Are Not Authorised To Remove a Course
+        </h2>
         <h3 className="my-4">Please Log in as Admin</h3>
       </div>
     );
