@@ -35,13 +35,13 @@ function Navbar() {
                 </Link>
               </li>
             ))}
-            {/* <div className="social-menu">
+            <div className="social-menu">
                 <FaIcons.FaTwitter className="social-icons" />
                 <FaIcons.FaFacebook className="social-icons" />
                 <FaIcons.FaGooglePlus className="social-icons" />
                 <FaIcons.FaVimeo className="social-icons" />
                 <FaIcons.FaPinterest className="social-icons" />
-            </div> */}
+            </div>
           </ul>
         </nav>
       </IconContext.Provider>
