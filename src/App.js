@@ -21,7 +21,6 @@ import AddReservation from './pages/Reservation/AddReservation';
 
 function App() {
   const authuser = localStorage.getItem('userAuth');
-  const getCourseId = useSelector((state) => state.course);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCurrent());
@@ -41,7 +40,7 @@ function App() {
           <Route path="/add-course" element={<AddCourse />} />
           <Route exact path="/delete-course" element={<DeleteCourse />} />
           <Route path="/details/:id" element={<DetailsPage />} />
-          <Route exact path="/add-reservations/:course_id" element={<AddReservation id={getCourseId} />} />
+          <Route exact path="/add-reservations" element={<AddReservation />} />
           <Route exact path="/reservations" element={<Reservation />} />
         </Routes>
       </div>
