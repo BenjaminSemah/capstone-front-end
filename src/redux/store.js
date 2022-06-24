@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 import courseReducer from './coursesSlice';
 import { userReducer } from './auth';
 import reservationSlice from './reservationSlice';
@@ -12,7 +12,7 @@ const store = configureStore({
     reservation: reservationSlice,
     currentUserr: currentUserSlice,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 export default store;
