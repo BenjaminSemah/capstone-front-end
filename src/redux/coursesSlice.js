@@ -83,6 +83,9 @@ const courseSlice = createSlice({
     builder.addCase(fetchCourseID.rejected, (state, action) => {
       state.error = action.error.message;
     });
+    builder.addCase(addCourse.fulfilled, (state, action) => {
+      state.courses.unshift(action.payload);
+    });
   },
 });
 

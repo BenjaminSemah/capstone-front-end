@@ -13,14 +13,16 @@ const DetailsPage = () => {
   }, [id]);
   return (
     <>
-      <section className="detail-page-course">
+      <section className="detail-page-course pt-4">
         <div className="detail">
           <div className="detail-img">
             <img src={courseDetails.image} alt="golf course" />
           </div>
           <div className="detail_info">
             <h2>{courseDetails.name}</h2>
-            <div className="detail_description">{courseDetails.description}</div>
+            <div className="detail_description">
+              {courseDetails.description}
+            </div>
             <div className="detail_items neutral">
               <div>City</div>
               <div className="city">{courseDetails.location}</div>
@@ -34,12 +36,10 @@ const DetailsPage = () => {
             </div>
             <div className="detail_items neutral">
               <div>Duration</div>
-              <div className="price-course">
-                2 Days
-              </div>
+              <div className="price-course">2 Days</div>
             </div>
             <div className="reserve">
-              <Link to={{ pathname: `/add-reservations/${id}` }}>
+              <Link to="/add-reservations">
                 <button type="button" className="detail_btn">
                   Reserve
                   <img
