@@ -2,24 +2,24 @@
 import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useParams } from 'react-router-dom';
 import { createReservation } from '../../redux/reservationSlice';
 
-const AddReservation = ({ item }) => {
+const AddReservation = () => {
   const dispatch = useDispatch();
   const [city, setCity] = useState('');
   const [date, setDate] = useState('');
+  const [cousreID, setCourse] = useState();
   const data = useSelector(({ course }) => course.courses);
-  const coursed = item?.filter((course) => course.id);
-  console.log(coursed);
+
   const currentUser = useSelector((state) => state.currentUserr.current);
-  const createReserve = () => {
+  const createReserve = (event) => {
+    event.preventDefault();
     dispatch(
       createReservation({
         city,
         date,
         user_id: currentUser.id,
-        course_id: 1,
+        course_id: cousreID,
       }),
     );
   };
@@ -32,26 +32,42 @@ const AddReservation = ({ item }) => {
     setDate(e.target.value);
   };
 
+  const handleCourse = (e) => {
+    setCourse(e.target.value);
+  };
+
   return (
     <>
-      <form className="delete-courses">
-        <label htmlFor="city">
-          City:
-          <br />
-          <input id="city" name="city" onChange={handleCity} />
-        </label>
-        <label htmlFor="date">
-          Date:
-          <br />
-          <input id="date" name="date" onChange={handleDate} />
-        </label>
-        <Form.Select aria-label="Default select example">
-          <option>Open this select menu</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+      <form className="reserve-form mt-4" onSubmit={createReserve}>
+        <Form.Control
+          type="text"
+          placeholder="City"
+          id="city"
+          name="city"
+          onChange={handleCity}
+        />
+        <br />
+        <Form.Control
+          type="date"
+          placeholder="Date"
+          id="date"
+          name="date"
+          onChange={handleDate}
+        />
+        <br />
+        <Form.Select
+          onChange={handleCourse}
+          aria-label="Default select example"
+          defaultValue={cousreID}
+        >
+          <option disabled>Open this select menu</option>
+          {data.map((course) => (
+            <option key={course.id} value={course.id}>
+              {course.name}
+            </option>
+          ))}
         </Form.Select>
-        <button type="submit" onClick={createReserve}>
+        <button className="btn btn-success mt-4" type="submit">
           Reserve
         </button>
       </form>

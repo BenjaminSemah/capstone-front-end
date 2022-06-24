@@ -5,7 +5,7 @@ import {
   Route,
   NavLink,
 } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import './App.css';
 import { fetchCourses } from './redux/coursesSlice';
 import { fetchCurrent } from './redux/currentUserSlice';

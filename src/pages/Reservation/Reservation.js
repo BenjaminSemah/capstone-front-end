@@ -13,14 +13,28 @@ const Reservation = () => {
   const { reservations } = res;
 
   return (
-    <div>
-      {reservations.map((reservation) => (
-        <div className="delete-courses" key={reservation.id}>
-          <p>{reservation.city}</p>
-          <p>{format(new Date(reservation.date), 'MMMM D, YYYY')}</p>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="pt-4">
+        <table className="table reservationss">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Date</th>
+              <th scope="col">City</th>
+            </tr>
+          </thead>
+          <tbody>
+            {reservations.map((reservation, index) => (
+              <tr key={reservation.id}>
+                <th scope="row">{index}</th>
+                <td>{format(new Date(reservation.date), 'MMMM D, YYYY')}</td>
+                <td>{reservation.city}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 };
 

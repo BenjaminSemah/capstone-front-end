@@ -22,15 +22,38 @@ export const fetchReservations = createAsyncThunk(
 export const createReservation = createAsyncThunk(
   'reservations/createReservation',
   async (reserve) => {
-    const reserveData = await axios.post(
-      'http://localhost:3001/api/reservations',
-      reserve, {
-        headers: { Authorization: userToken },
+    const response = await fetch('http://localhost:3001/api/reservations', {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: userToken,
       },
-    );
-    return reserveData.data;
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
+      body: JSON.stringify(reserve),
+    });
+
+    const result = await response.json();
+
+    return result;
   },
 );
+
+// export const createReservation = createAsyncThunk(
+//   'reservations/createReservation',
+//   async (reserve) => {
+//     const reserveData = await axios.post(
+//       'http://localhost:3001/api/reservations',
+//       reserve, {
+//         headers: { Authorization: userToken },
+//       },
+//     );
+//     return reserveData.data;
+//   },
+// );
 
 const reservationSlice = createSlice({
   name: 'reservation',

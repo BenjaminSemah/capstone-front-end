@@ -27,7 +27,7 @@ const DeleteCourse = () => {
   }
   return (
     <div className="delete-courses pt-4">
-      <Container>
+      <Container className="delete-content">
         <div className="text-center">
           <h1 className="main-title">Delete Courses</h1>
           <p className="sub-title">Which coure, you need to delete it</p>
@@ -46,7 +46,7 @@ const DeleteCourse = () => {
                 <button
                   onClick={() => dispatch(deleteCourse(id))}
                   type="button"
-                  className="btn btn-outline-dark"
+                  className="del-btn"
                 >
                   Delete
                 </button>
