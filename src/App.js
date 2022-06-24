@@ -1,9 +1,5 @@
 import React, { useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import './App.css';
 import { fetchCourses } from './redux/coursesSlice';
@@ -17,6 +13,7 @@ import AddCourse from './pages/addCourse/AddCourse';
 import Reservation from './pages/Reservation/Reservation';
 import AddReservation from './pages/Reservation/AddReservation';
 import Navbar from './components/Navbar/Navbar';
+import NotFound from './pages/notFound/notFound';
 
 function App() {
   const dispatch = useDispatch();
@@ -38,6 +35,7 @@ function App() {
           <Route path="/details/:id" element={<DetailsPage />} />
           <Route exact path="/add-reservations" element={<AddReservation />} />
           <Route exact path="/reservations" element={<Reservation />} />
+          <Route exact path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
