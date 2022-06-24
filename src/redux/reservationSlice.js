@@ -42,19 +42,6 @@ export const createReservation = createAsyncThunk(
   },
 );
 
-// export const createReservation = createAsyncThunk(
-//   'reservations/createReservation',
-//   async (reserve) => {
-//     const reserveData = await axios.post(
-//       'http://localhost:3001/api/reservations',
-//       reserve, {
-//         headers: { Authorization: userToken },
-//       },
-//     );
-//     return reserveData.data;
-//   },
-// );
-
 const reservationSlice = createSlice({
   name: 'reservation',
   initialState,

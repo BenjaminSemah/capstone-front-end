@@ -63,10 +63,9 @@
 
 .nav-menu-items {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #fff;
   outline: none;
   border: none;
-  margin-top:-150px;
 }
 
 .navbar-toggle {

@@ -9,6 +9,7 @@ const SidebarData = [
     path: '/',
     icon: <AiIcons.AiOutlineHome />,
     cName: 'nav-text',
+    access: ['admin', 'user'],
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const SidebarData = [
     path: '/reservations',
     icon: <IoIcons.IoIosPaper />,
     cName: 'nav-text',
+    access: ['admin', 'user'],
   },
   {
     id: 3,
@@ -23,13 +25,23 @@ const SidebarData = [
     path: '/add-course',
     icon: <AiIcons.AiFillFolderAdd />,
     cName: 'nav-text',
+    access: ['admin'],
   },
   {
     id: 4,
+    title: 'Add reservation',
+    path: '/add-reservations',
+    icon: <AiIcons.AiFillFolderAdd />,
+    cName: 'nav-text',
+    access: ['admin', 'user'],
+  },
+  {
+    id: 5,
     title: 'Delete course',
     path: '/delete-course',
     icon: <AiIcons.AiFillDelete />,
     cName: 'nav-text',
+    access: ['admin'],
   },
 ];
 

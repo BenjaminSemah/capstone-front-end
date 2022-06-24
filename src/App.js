@@ -14,7 +14,6 @@ import Home from './pages/home/home';
 import DeleteCourse from './pages/deleteCourse/deleteCourse';
 import DetailsPage from './pages/detailsPage/detailsPage';
 import AddCourse from './pages/addCourse/AddCourse';
-import { APIuserLogOut } from './redux/auth';
 import Reservation from './pages/Reservation/Reservation';
 import AddReservation from './pages/Reservation/AddReservation';
 import Navbar from './components/Navbar/Navbar';

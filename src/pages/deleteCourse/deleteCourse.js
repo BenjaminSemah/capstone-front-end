@@ -26,7 +26,7 @@ const DeleteCourse = () => {
     );
   }
   return (
-    <div className="delete-courses pt-4">
+    <div className="delete-courses mt-5">
       <Container className="delete-content">
         <div className="text-center">
           <h1 className="main-title">Delete Courses</h1>
