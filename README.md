@@ -22,16 +22,21 @@
 ## Preview
 
 ### Home Page
-![homepage](https://user-images.githubusercontent.com/64237087/175143345-ee538384-06a1-4eff-8adc-d86da535d707.png)
+![homepage](https://user-images.githubusercontent.com/53402600/175576410-6d7b3cc3-f16c-4a40-a651-f1cfef00d548.png)
 
 ### Details Page
-![detailPage](https://user-images.githubusercontent.com/64237087/175143462-a41ff61e-c9ed-45c6-a06a-3812f7409fae.png)
+![detailPage](https://user-images.githubusercontent.com/53402600/175576586-e7e36060-d756-479b-9b6d-c950a3730209.png)
+
 
 ### Add Course Page
-![addCourse](https://user-images.githubusercontent.com/64237087/175143488-0a6d9acd-3e74-46b8-b504-f208e87ae033.png)
+![addCourse](https://user-images.githubusercontent.com/53402600/175576633-04cdc912-8722-43fd-a11e-b64e9824fc5f.png)
+
 
 ### Delete Course Page
-![deleteCourse](https://user-images.githubusercontent.com/64237087/175143504-3654f187-c9b0-40d1-842b-9cccbd938037.png)
+![deleteCourse](https://user-images.githubusercontent.com/53402600/175576683-c7752204-6d33-4027-a234-a51de43bff66.png)
+
+### Not Found Page
+![notFound](https://user-images.githubusercontent.com/53402600/175576722-415625b3-864b-4cd5-aa12-39fc1866dbc9.png)
 
 
 ## Live version
