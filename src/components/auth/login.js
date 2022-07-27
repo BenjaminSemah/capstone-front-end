@@ -27,7 +27,6 @@ const Login = () => {
   useEffect(() => {
     if (loggedIn === 'in') {
       navigate('/', { replace: true });
-      window.location.reload();
     }
     if (loggedIn === 'err') {
       setLoginSuccess(loggedIn);
@@ -35,7 +34,6 @@ const Login = () => {
   }, [state]);
   return (
     <section className="form-outline m-4 text-center">
-
       <h2 className=" m-4 ">Welcome back</h2>
 
       <form onSubmit={loginUser} className=" m-4 text-center">
@@ -62,9 +60,13 @@ const Login = () => {
           />
         </div>
         <div className="d-flex justify-content-around">
-          <button type="submit" className="btn btn-success px-4">Log In</button>
+          <button type="submit" className="btn btn-success px-4">
+            Log In
+          </button>
           <Link to="/register">
-            <button type="button" className="btn btn-success">Register</button>
+            <button type="button" className="btn btn-success">
+              Register
+            </button>
           </Link>
         </div>
       </form>

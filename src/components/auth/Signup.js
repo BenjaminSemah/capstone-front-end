@@ -9,7 +9,6 @@ const Register = () => {
 
   function navigateToHome() {
     navigate('/', { replace: true });
-    window.location.reload();
   }
   const dispatch = useDispatch();
   const state = useSelector((state) => state.UserReducer);
