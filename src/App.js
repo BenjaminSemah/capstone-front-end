@@ -1,24 +1,44 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import './App.css';
+import { fetchCourses } from './redux/coursesSlice';
+import { fetchCurrent } from './redux/currentUserSlice';
+import Register from './components/auth/Signup';
+import Login from './components/auth/login';
+import Home from './pages/home/home';
+import DeleteCourse from './pages/deleteCourse/deleteCourse';
+import DetailsPage from './pages/detailsPage/detailsPage';
+import AddCourse from './pages/addCourse/AddCourse';
+import Reservation from './pages/Reservation/Reservation';
+import AddReservation from './pages/Reservation/AddReservation';
+import Navbar from './components/Navbar/Navbar';
+import NotFound from './pages/notFound/notFound';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCurrent());
+    dispatch(fetchCourses());
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <div className="App">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/add-course" element={<AddCourse />} />
+          <Route exact path="/delete-course" element={<DeleteCourse />} />
+          <Route path="/details/:id" element={<DetailsPage />} />
+          <Route exact path="/add-reservations" element={<AddReservation />} />
+          <Route exact path="/reservations" element={<Reservation />} />
+          <Route exact path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

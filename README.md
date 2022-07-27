@@ -1,70 +1,165 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Book A Golf Course Frontend
 
-## Available Scripts
+> This is the React front-end Golf course booking web-application. This applications is responsive and users can load, create, and delete doctors and reservations We use React for the front-end. In order to access the application users need to to be authorized as Admins then login.
 
-In the project directory, you can run:
+## Link to the backend
+[Book A Golf Course Backend](https://github.com/omarsalem7/capstone-back-end)
 
-### `npm start`
+## Kanban Board
+[Kanban Board](https://github.com/omarsalem7/capstone-back-end/projects/2)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Initial state Of Kanban Board
+[Initial Kanban Board](https://github.com/omarsalem7/capstone-back-end/issues/17)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+> ***We are a group of five***
+1. Team 1 - [Butler](https://github.com/butlermuwo)
+2. Team 2 - [Stephan](https://github.com/sneeu-leeu)
+3. Team 3 - [Josphat](https://github.com/zairdon20)
+4. Team 4 - [Omar](https://github.com/omarsalem7)
+5. Team 5 - [Benjamin](https://github.com/BenjaminSemah)
+## Preview
 
-### `npm test`
+### Home Page
+![homepage](https://user-images.githubusercontent.com/53402600/175576410-6d7b3cc3-f16c-4a40-a651-f1cfef00d548.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Details Page
+![detailPage](https://user-images.githubusercontent.com/53402600/175576586-e7e36060-d756-479b-9b6d-c950a3730209.png)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Add Course Page
+![addCourse](https://user-images.githubusercontent.com/53402600/175576633-04cdc912-8722-43fd-a11e-b64e9824fc5f.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Delete Course Page
+![deleteCourse](https://user-images.githubusercontent.com/53402600/175576683-c7752204-6d33-4027-a234-a51de43bff66.png)
 
-### `npm run eject`
+### Not Found Page
+![notFound](https://user-images.githubusercontent.com/53402600/175576722-415625b3-864b-4cd5-aa12-39fc1866dbc9.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Live version
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- [App (Front-end)]()
+- [Back-end]()
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Built With
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- React
+- Redux
 
-## Learn More
+## Getting Started
+- Follow setup instructions below to get a copy locally.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React
+- Git and Github
+- Terminal
+- Browser
 
-### Code Splitting
+### Install
+- [Git](https://git-scm.com/downloads)
+- [Node](https://nodejs.org/en/download/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Setup
 
-### Analyzing the Bundle Size
+Follow [this link](https://github.com/omarsalem7/capstone-back-end) to visit the [back-end repository]() and start the server on localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Clone this repository ``
+- Cd or navigate into the directory and run `npm install` to install dependencies
+- Run `npm start`
+- Visit `localhost:3001` in your browser
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Using it Locally
 
-### Advanced Configuration
+- Clone the project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash 
+git clone https://github.com/BenjaminSemah/capstone-front-end.git
 
-### Deployment
+cd capstone-front-end
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Install dependencies
 
-### `npm run build` fails to minify
+```bash
+npm i 
+or
+npm install
+```
+- To Start the development server
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- To test the project
+```bash
+npm run test
+```
+
+
+## Backend Repo
+
+[Book A Golf Course Backend](https://github.com/omarsalem7/capstone-back-end.git)
+
+Suggestions:
+Back-end should run in **localhost:3000**
+Front-end should run in **localhost:3001**
+
+# Credits
+
+## Authors
+
+👤 **Omar Salem**
+
+- GitHub: [Omar Salem](https://github.com/omarsalem7)
+- Twitter: [Omar Salem](https://twitter.com/Omar80491499)
+- LinkedIn: [Omar Salem](https://www.linkedin.com/in/omar-salem-a6945b177/)
+
+👤 **Stephan**
+
+- GitHub: [@stephan](https://github.com/sneeu-leeu)
+- Twitter: [@Stephan](https://twitter.com/Stephan07484055)
+- LinkedIn: [Stephan Annandale](https://www.linkedin.com/in/stephan-annandale-a4b4931a9/)
+  
+👤 **Josphat Nkonde**
+
+- GitHub: [@zairdon20](https://github.com/zairdon20)
+- Twitter: [@josphat1 nkonde](https://twitter.com/josphat-nkonde)
+- LinkedIn: [@josphat nkonde](https://www.linkedin.com/in/josphat-nkonde)
+
+👤 **Benjmain Semah**
+
+- GitHub: [@BenjaminSemah](https://github.com/BenjaminSemah)
+- Twitter: [@BenjaminSemah](https://twitter.com/BenjaminSemah)
+- LinkedIn: [@BenjaminSemah](https://www.linkedin.com/in/benjaminsemah/)
+
+👤 **Butler shimalwani**
+
+- GitHub: [@Butlermuwo](https://github.com/butlermuwo)
+- Twitter: [@Butlermuwo](https://twitter.com/ButlerMuwo)
+- LinkedIn: [@Butlermuwo](https://www.linkedin.com/in/butlermuwo)
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Microverse](https://www.microverse.org/)
+- Original Design idea by [Murat Korkmaz](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.

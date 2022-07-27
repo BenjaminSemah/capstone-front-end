@@ -1,0 +1,47 @@
+.home-img {
+  max-width: 230px;
+  max-height: 230px;
+  width: 100%;
+  height: 220px;
+}
+
+.main-title {
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.pagination {
+  position: relative;
+}
+
+.home-prev-btn {
+  right: 0;
+  border-top-left-radius: 150px;
+  border-bottom-left-radius: 150px;
+}
+
+.home-next-btn {
+  left: 0;
+  border-top-right-radius: 150px;
+  border-bottom-right-radius: 150px;
+}
+
+.pagination-btn {
+  position: fixed;
+  top: 40vh;
+  background-color: #97bf0f;
+  border: none;
+  padding: 10px 20px;
+  height: 45px;
+}
+
+.pagination-btn img {
+  filter:
+    invert(100%) sepia(100%) saturate(0%) hue-rotate(174deg)
+    brightness(102%) contrast(102%);
+}
+
+button:disabled {
+  background-color: #efefef;
+  filter: blur(0.7px);
+}
